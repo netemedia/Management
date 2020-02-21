@@ -3,10 +3,12 @@
 
   <table class="w-full table-auto">
     <thead class="font-semibold text-gray-700">
-    <th class="p-4 text-left">Nom</th>
-    <th class="p-4 text-left">Projet</th>
-    <th class="p-4 text-left">Ticket</th>
-    <th class="p-4 text-left">Actions</th>
+    <tr>
+      <th class="p-4 text-left">Nom</th>
+      <th class="p-4 text-left">Projet</th>
+      <th class="p-4 text-left">Ticket</th>
+      <th class="p-4 text-left">Actions</th>
+    </tr>
     </thead>
     <tbody class="border-t-2 border-solid border-gray-500">
     @foreach($clients as $client)

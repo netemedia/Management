@@ -13,9 +13,14 @@ class ProjectRepository implements RepositoryInterface
         $projects = Project::orderBy('name');
 
         $client = $request->query('client');
+        $search = $request->query('search');
 
         if ( $client ) {
             $projects = $projects->where('client_id', $client);
+        }
+
+        if ( $search ) {
+            $projects = $projects->where('name', 'LIKE', "%$search%");
         }
 
         return $projects;
