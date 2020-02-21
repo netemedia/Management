@@ -13,11 +13,7 @@
 @endsection
 
 @section('breadcrumb')
-  <ul class="flex">
-    <li>
-      <a class="text-gray-600 no-underline" href="/">Dashboard</a>
-    </li>
-  </ul>
+  @comp('App\Http\View\Components\Breadcrumb')
 @endsection
 
 @section('content')

@@ -1,7 +1,14 @@
 @extends('app')
 
+@section('head')
+@endsection
+
 @section('title')
-  Nouveau Client
+  Analytics
+@endsection
+
+@section('subtitle')
+  Des chiffres et des chiffres
 @endsection
 
 @section('breadcrumb')
@@ -9,6 +16,5 @@
 @endsection
 
 @section('content')
-  @include('clients.components.forms.create')
-  @include('components.errors')
 @endsection
+

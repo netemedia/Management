@@ -13970,36 +13970,84 @@ a.go {
   transition-duration: 1000ms;
 }
 
-.bg-gradient-blues {
-  background-image: linear-gradient(to right, #2b6cb0, #63b3ed);
-}
-
-.bg-gradient-greens {
-  background-image: linear-gradient(to right, #2f855a, #68d391);
+.bg-gradient-grays {
+  background-image: linear-gradient(to right, #718096, #cbd5e0);
 }
 
 .bg-gradient-reds {
-  background-image: linear-gradient(to right, #c53030, #fc8181);
+  background-image: linear-gradient(to right, #e53e3e, #fc8181);
 }
 
 .bg-gradient-oranges {
-  background-image: linear-gradient(to right, #c05621, #f6ad55);
+  background-image: linear-gradient(to right, #dd6b20, #f6ad55);
 }
 
-.hover\:bg-gradient-blues:hover {
-  background-image: linear-gradient(to right, #2b6cb0, #63b3ed);
+.bg-gradient-yellows {
+  background-image: linear-gradient(to right, #d69e2e, #f6e05e);
 }
 
-.hover\:bg-gradient-greens:hover {
-  background-image: linear-gradient(to right, #2f855a, #68d391);
+.bg-gradient-greens {
+  background-image: linear-gradient(to right, #38a169, #68d391);
+}
+
+.bg-gradient-teals {
+  background-image: linear-gradient(to right, #319795, #4fd1c5);
+}
+
+.bg-gradient-blues {
+  background-image: linear-gradient(to right, #3182ce, #63b3ed);
+}
+
+.bg-gradient-indigos {
+  background-image: linear-gradient(to right, #5a67d8, #7f9cf5);
+}
+
+.bg-gradient-purples {
+  background-image: linear-gradient(to right, #805ad5, #b794f4);
+}
+
+.bg-gradient-pinks {
+  background-image: linear-gradient(to right, #d53f8c, #f687b3);
+}
+
+.hover\:bg-gradient-grays:hover {
+  background-image: linear-gradient(to right, #718096, #cbd5e0);
 }
 
 .hover\:bg-gradient-reds:hover {
-  background-image: linear-gradient(to right, #c53030, #fc8181);
+  background-image: linear-gradient(to right, #e53e3e, #fc8181);
 }
 
 .hover\:bg-gradient-oranges:hover {
-  background-image: linear-gradient(to right, #c05621, #f6ad55);
+  background-image: linear-gradient(to right, #dd6b20, #f6ad55);
+}
+
+.hover\:bg-gradient-yellows:hover {
+  background-image: linear-gradient(to right, #d69e2e, #f6e05e);
+}
+
+.hover\:bg-gradient-greens:hover {
+  background-image: linear-gradient(to right, #38a169, #68d391);
+}
+
+.hover\:bg-gradient-teals:hover {
+  background-image: linear-gradient(to right, #319795, #4fd1c5);
+}
+
+.hover\:bg-gradient-blues:hover {
+  background-image: linear-gradient(to right, #3182ce, #63b3ed);
+}
+
+.hover\:bg-gradient-indigos:hover {
+  background-image: linear-gradient(to right, #5a67d8, #7f9cf5);
+}
+
+.hover\:bg-gradient-purples:hover {
+  background-image: linear-gradient(to right, #805ad5, #b794f4);
+}
+
+.hover\:bg-gradient-pinks:hover {
+  background-image: linear-gradient(to right, #d53f8c, #f687b3);
 }
 
 @media (min-width: 640px) {
@@ -27345,36 +27393,84 @@ a.go {
     transition-duration: 1000ms;
   }
 
-  .sm\:bg-gradient-blues {
-    background-image: linear-gradient(to right, #2b6cb0, #63b3ed);
-  }
-
-  .sm\:bg-gradient-greens {
-    background-image: linear-gradient(to right, #2f855a, #68d391);
+  .sm\:bg-gradient-grays {
+    background-image: linear-gradient(to right, #718096, #cbd5e0);
   }
 
   .sm\:bg-gradient-reds {
-    background-image: linear-gradient(to right, #c53030, #fc8181);
+    background-image: linear-gradient(to right, #e53e3e, #fc8181);
   }
 
   .sm\:bg-gradient-oranges {
-    background-image: linear-gradient(to right, #c05621, #f6ad55);
+    background-image: linear-gradient(to right, #dd6b20, #f6ad55);
   }
 
-  .sm\:hover\:bg-gradient-blues:hover {
-    background-image: linear-gradient(to right, #2b6cb0, #63b3ed);
+  .sm\:bg-gradient-yellows {
+    background-image: linear-gradient(to right, #d69e2e, #f6e05e);
   }
 
-  .sm\:hover\:bg-gradient-greens:hover {
-    background-image: linear-gradient(to right, #2f855a, #68d391);
+  .sm\:bg-gradient-greens {
+    background-image: linear-gradient(to right, #38a169, #68d391);
+  }
+
+  .sm\:bg-gradient-teals {
+    background-image: linear-gradient(to right, #319795, #4fd1c5);
+  }
+
+  .sm\:bg-gradient-blues {
+    background-image: linear-gradient(to right, #3182ce, #63b3ed);
+  }
+
+  .sm\:bg-gradient-indigos {
+    background-image: linear-gradient(to right, #5a67d8, #7f9cf5);
+  }
+
+  .sm\:bg-gradient-purples {
+    background-image: linear-gradient(to right, #805ad5, #b794f4);
+  }
+
+  .sm\:bg-gradient-pinks {
+    background-image: linear-gradient(to right, #d53f8c, #f687b3);
+  }
+
+  .sm\:hover\:bg-gradient-grays:hover {
+    background-image: linear-gradient(to right, #718096, #cbd5e0);
   }
 
   .sm\:hover\:bg-gradient-reds:hover {
-    background-image: linear-gradient(to right, #c53030, #fc8181);
+    background-image: linear-gradient(to right, #e53e3e, #fc8181);
   }
 
   .sm\:hover\:bg-gradient-oranges:hover {
-    background-image: linear-gradient(to right, #c05621, #f6ad55);
+    background-image: linear-gradient(to right, #dd6b20, #f6ad55);
+  }
+
+  .sm\:hover\:bg-gradient-yellows:hover {
+    background-image: linear-gradient(to right, #d69e2e, #f6e05e);
+  }
+
+  .sm\:hover\:bg-gradient-greens:hover {
+    background-image: linear-gradient(to right, #38a169, #68d391);
+  }
+
+  .sm\:hover\:bg-gradient-teals:hover {
+    background-image: linear-gradient(to right, #319795, #4fd1c5);
+  }
+
+  .sm\:hover\:bg-gradient-blues:hover {
+    background-image: linear-gradient(to right, #3182ce, #63b3ed);
+  }
+
+  .sm\:hover\:bg-gradient-indigos:hover {
+    background-image: linear-gradient(to right, #5a67d8, #7f9cf5);
+  }
+
+  .sm\:hover\:bg-gradient-purples:hover {
+    background-image: linear-gradient(to right, #805ad5, #b794f4);
+  }
+
+  .sm\:hover\:bg-gradient-pinks:hover {
+    background-image: linear-gradient(to right, #d53f8c, #f687b3);
   }
 }
 
@@ -40721,36 +40817,84 @@ a.go {
     transition-duration: 1000ms;
   }
 
-  .md\:bg-gradient-blues {
-    background-image: linear-gradient(to right, #2b6cb0, #63b3ed);
-  }
-
-  .md\:bg-gradient-greens {
-    background-image: linear-gradient(to right, #2f855a, #68d391);
+  .md\:bg-gradient-grays {
+    background-image: linear-gradient(to right, #718096, #cbd5e0);
   }
 
   .md\:bg-gradient-reds {
-    background-image: linear-gradient(to right, #c53030, #fc8181);
+    background-image: linear-gradient(to right, #e53e3e, #fc8181);
   }
 
   .md\:bg-gradient-oranges {
-    background-image: linear-gradient(to right, #c05621, #f6ad55);
+    background-image: linear-gradient(to right, #dd6b20, #f6ad55);
   }
 
-  .md\:hover\:bg-gradient-blues:hover {
-    background-image: linear-gradient(to right, #2b6cb0, #63b3ed);
+  .md\:bg-gradient-yellows {
+    background-image: linear-gradient(to right, #d69e2e, #f6e05e);
   }
 
-  .md\:hover\:bg-gradient-greens:hover {
-    background-image: linear-gradient(to right, #2f855a, #68d391);
+  .md\:bg-gradient-greens {
+    background-image: linear-gradient(to right, #38a169, #68d391);
+  }
+
+  .md\:bg-gradient-teals {
+    background-image: linear-gradient(to right, #319795, #4fd1c5);
+  }
+
+  .md\:bg-gradient-blues {
+    background-image: linear-gradient(to right, #3182ce, #63b3ed);
+  }
+
+  .md\:bg-gradient-indigos {
+    background-image: linear-gradient(to right, #5a67d8, #7f9cf5);
+  }
+
+  .md\:bg-gradient-purples {
+    background-image: linear-gradient(to right, #805ad5, #b794f4);
+  }
+
+  .md\:bg-gradient-pinks {
+    background-image: linear-gradient(to right, #d53f8c, #f687b3);
+  }
+
+  .md\:hover\:bg-gradient-grays:hover {
+    background-image: linear-gradient(to right, #718096, #cbd5e0);
   }
 
   .md\:hover\:bg-gradient-reds:hover {
-    background-image: linear-gradient(to right, #c53030, #fc8181);
+    background-image: linear-gradient(to right, #e53e3e, #fc8181);
   }
 
   .md\:hover\:bg-gradient-oranges:hover {
-    background-image: linear-gradient(to right, #c05621, #f6ad55);
+    background-image: linear-gradient(to right, #dd6b20, #f6ad55);
+  }
+
+  .md\:hover\:bg-gradient-yellows:hover {
+    background-image: linear-gradient(to right, #d69e2e, #f6e05e);
+  }
+
+  .md\:hover\:bg-gradient-greens:hover {
+    background-image: linear-gradient(to right, #38a169, #68d391);
+  }
+
+  .md\:hover\:bg-gradient-teals:hover {
+    background-image: linear-gradient(to right, #319795, #4fd1c5);
+  }
+
+  .md\:hover\:bg-gradient-blues:hover {
+    background-image: linear-gradient(to right, #3182ce, #63b3ed);
+  }
+
+  .md\:hover\:bg-gradient-indigos:hover {
+    background-image: linear-gradient(to right, #5a67d8, #7f9cf5);
+  }
+
+  .md\:hover\:bg-gradient-purples:hover {
+    background-image: linear-gradient(to right, #805ad5, #b794f4);
+  }
+
+  .md\:hover\:bg-gradient-pinks:hover {
+    background-image: linear-gradient(to right, #d53f8c, #f687b3);
   }
 }
 
@@ -54097,36 +54241,84 @@ a.go {
     transition-duration: 1000ms;
   }
 
-  .lg\:bg-gradient-blues {
-    background-image: linear-gradient(to right, #2b6cb0, #63b3ed);
-  }
-
-  .lg\:bg-gradient-greens {
-    background-image: linear-gradient(to right, #2f855a, #68d391);
+  .lg\:bg-gradient-grays {
+    background-image: linear-gradient(to right, #718096, #cbd5e0);
   }
 
   .lg\:bg-gradient-reds {
-    background-image: linear-gradient(to right, #c53030, #fc8181);
+    background-image: linear-gradient(to right, #e53e3e, #fc8181);
   }
 
   .lg\:bg-gradient-oranges {
-    background-image: linear-gradient(to right, #c05621, #f6ad55);
+    background-image: linear-gradient(to right, #dd6b20, #f6ad55);
   }
 
-  .lg\:hover\:bg-gradient-blues:hover {
-    background-image: linear-gradient(to right, #2b6cb0, #63b3ed);
+  .lg\:bg-gradient-yellows {
+    background-image: linear-gradient(to right, #d69e2e, #f6e05e);
   }
 
-  .lg\:hover\:bg-gradient-greens:hover {
-    background-image: linear-gradient(to right, #2f855a, #68d391);
+  .lg\:bg-gradient-greens {
+    background-image: linear-gradient(to right, #38a169, #68d391);
+  }
+
+  .lg\:bg-gradient-teals {
+    background-image: linear-gradient(to right, #319795, #4fd1c5);
+  }
+
+  .lg\:bg-gradient-blues {
+    background-image: linear-gradient(to right, #3182ce, #63b3ed);
+  }
+
+  .lg\:bg-gradient-indigos {
+    background-image: linear-gradient(to right, #5a67d8, #7f9cf5);
+  }
+
+  .lg\:bg-gradient-purples {
+    background-image: linear-gradient(to right, #805ad5, #b794f4);
+  }
+
+  .lg\:bg-gradient-pinks {
+    background-image: linear-gradient(to right, #d53f8c, #f687b3);
+  }
+
+  .lg\:hover\:bg-gradient-grays:hover {
+    background-image: linear-gradient(to right, #718096, #cbd5e0);
   }
 
   .lg\:hover\:bg-gradient-reds:hover {
-    background-image: linear-gradient(to right, #c53030, #fc8181);
+    background-image: linear-gradient(to right, #e53e3e, #fc8181);
   }
 
   .lg\:hover\:bg-gradient-oranges:hover {
-    background-image: linear-gradient(to right, #c05621, #f6ad55);
+    background-image: linear-gradient(to right, #dd6b20, #f6ad55);
+  }
+
+  .lg\:hover\:bg-gradient-yellows:hover {
+    background-image: linear-gradient(to right, #d69e2e, #f6e05e);
+  }
+
+  .lg\:hover\:bg-gradient-greens:hover {
+    background-image: linear-gradient(to right, #38a169, #68d391);
+  }
+
+  .lg\:hover\:bg-gradient-teals:hover {
+    background-image: linear-gradient(to right, #319795, #4fd1c5);
+  }
+
+  .lg\:hover\:bg-gradient-blues:hover {
+    background-image: linear-gradient(to right, #3182ce, #63b3ed);
+  }
+
+  .lg\:hover\:bg-gradient-indigos:hover {
+    background-image: linear-gradient(to right, #5a67d8, #7f9cf5);
+  }
+
+  .lg\:hover\:bg-gradient-purples:hover {
+    background-image: linear-gradient(to right, #805ad5, #b794f4);
+  }
+
+  .lg\:hover\:bg-gradient-pinks:hover {
+    background-image: linear-gradient(to right, #d53f8c, #f687b3);
   }
 }
 
@@ -67473,35 +67665,83 @@ a.go {
     transition-duration: 1000ms;
   }
 
-  .xl\:bg-gradient-blues {
-    background-image: linear-gradient(to right, #2b6cb0, #63b3ed);
-  }
-
-  .xl\:bg-gradient-greens {
-    background-image: linear-gradient(to right, #2f855a, #68d391);
+  .xl\:bg-gradient-grays {
+    background-image: linear-gradient(to right, #718096, #cbd5e0);
   }
 
   .xl\:bg-gradient-reds {
-    background-image: linear-gradient(to right, #c53030, #fc8181);
+    background-image: linear-gradient(to right, #e53e3e, #fc8181);
   }
 
   .xl\:bg-gradient-oranges {
-    background-image: linear-gradient(to right, #c05621, #f6ad55);
+    background-image: linear-gradient(to right, #dd6b20, #f6ad55);
   }
 
-  .xl\:hover\:bg-gradient-blues:hover {
-    background-image: linear-gradient(to right, #2b6cb0, #63b3ed);
+  .xl\:bg-gradient-yellows {
+    background-image: linear-gradient(to right, #d69e2e, #f6e05e);
   }
 
-  .xl\:hover\:bg-gradient-greens:hover {
-    background-image: linear-gradient(to right, #2f855a, #68d391);
+  .xl\:bg-gradient-greens {
+    background-image: linear-gradient(to right, #38a169, #68d391);
+  }
+
+  .xl\:bg-gradient-teals {
+    background-image: linear-gradient(to right, #319795, #4fd1c5);
+  }
+
+  .xl\:bg-gradient-blues {
+    background-image: linear-gradient(to right, #3182ce, #63b3ed);
+  }
+
+  .xl\:bg-gradient-indigos {
+    background-image: linear-gradient(to right, #5a67d8, #7f9cf5);
+  }
+
+  .xl\:bg-gradient-purples {
+    background-image: linear-gradient(to right, #805ad5, #b794f4);
+  }
+
+  .xl\:bg-gradient-pinks {
+    background-image: linear-gradient(to right, #d53f8c, #f687b3);
+  }
+
+  .xl\:hover\:bg-gradient-grays:hover {
+    background-image: linear-gradient(to right, #718096, #cbd5e0);
   }
 
   .xl\:hover\:bg-gradient-reds:hover {
-    background-image: linear-gradient(to right, #c53030, #fc8181);
+    background-image: linear-gradient(to right, #e53e3e, #fc8181);
   }
 
   .xl\:hover\:bg-gradient-oranges:hover {
-    background-image: linear-gradient(to right, #c05621, #f6ad55);
+    background-image: linear-gradient(to right, #dd6b20, #f6ad55);
+  }
+
+  .xl\:hover\:bg-gradient-yellows:hover {
+    background-image: linear-gradient(to right, #d69e2e, #f6e05e);
+  }
+
+  .xl\:hover\:bg-gradient-greens:hover {
+    background-image: linear-gradient(to right, #38a169, #68d391);
+  }
+
+  .xl\:hover\:bg-gradient-teals:hover {
+    background-image: linear-gradient(to right, #319795, #4fd1c5);
+  }
+
+  .xl\:hover\:bg-gradient-blues:hover {
+    background-image: linear-gradient(to right, #3182ce, #63b3ed);
+  }
+
+  .xl\:hover\:bg-gradient-indigos:hover {
+    background-image: linear-gradient(to right, #5a67d8, #7f9cf5);
+  }
+
+  .xl\:hover\:bg-gradient-purples:hover {
+    background-image: linear-gradient(to right, #805ad5, #b794f4);
+  }
+
+  .xl\:hover\:bg-gradient-pinks:hover {
+    background-image: linear-gradient(to right, #d53f8c, #f687b3);
   }
 }

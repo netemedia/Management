@@ -42,7 +42,7 @@ class Task extends Model implements DurationInterface, MomentInterface
             return '-';
         }
 
-        return Carbon::create($this->start_date)->format('d/m/Y');
+        return Carbon::createFromFormat('Y-m-d', $this->start_date)->locale('fr_FR')->isoFormat('dddd DD MMMM');
     }
 
     public function getHumanReadableDurationAttribute() : string
