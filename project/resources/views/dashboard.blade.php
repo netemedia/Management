@@ -9,7 +9,7 @@
 @endsection
 
 @section('subtitle')
-  Welcome to Coruscant :)
+  Welcome to Westeros :)
 @endsection
 
 @section('breadcrumb')

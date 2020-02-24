@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <title>@yield('title') - Coruscant</title>
+  <title>@yield('title') - Westeros</title>
   <link rel="stylesheet" href="{{ asset('css/main.css') }}">
   <link rel="stylesheet" href="{{ asset('vendor/codyhouse-schedule/css/style.css') }}">
   <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
@@ -15,7 +15,7 @@
 <header class="bg-white h-12 shadow-md overflow-hidden fixed w-full">
   <div class="h-12 w-64 bg-gray-800 text-white text-bold py-2 px-8">
     <span>
-      Coruscant
+      Westeros
     </span>
   </div>
 </header>
