@@ -2,13 +2,15 @@
 
 namespace App\Http\Livewire\Filters;
 
+use App\Http\Forms\ResourceForm;
 use Livewire\Component;
 
 class Tasks extends Component
 {
     public ?string $search = '';
     public ?string $project_id = null;
-    public bool $displayDoneTasks = false;
+    public ?string $resource_id = null;
+    public bool $done = false;
 
     public function mount(?string $project_id = null)
     {
@@ -17,22 +19,34 @@ class Tasks extends Component
 
     public function render()
     {
-        return view('livewire.filters.tasks');
+        $selectResources = ResourceForm::select();
+        return view('livewire.filters.tasks', compact('selectResources'));
     }
 
-    public function search(?string $project_id = null)
+    public function search()
     {
-        $this->emit('SearchTask', $this->search, $this->project_id);
+        $this->emit('SearchTask', $this->searchData());
     }
 
     public function toggleDisplayDoneTasks()
     {
-        $this->displayDoneTasks = ! $this->displayDoneTasks;
+        $this->done = ! $this->done;
+        $this->emit('SearchTask', $this->searchData());
     }
 
     public function reinit()
     {
         $this->search = null;
-        $this->emit('SearchTask', $this->search, $this->project_id);
+        $this->emit('SearchTask', $this->searchData());
+    }
+
+    protected function searchData() : array
+    {
+        return [
+            'search'      => $this->search,
+            'done'        => $this->done,
+            'project_id'  => $this->project_id,
+            'resource_id' => $this->resource_id,
+        ];
     }
 }

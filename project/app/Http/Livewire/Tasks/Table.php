@@ -12,18 +12,28 @@ class Table extends Component
 {
     use WithPagination;
     public ?string $project_id = null;
-    private Paginator $tasks;
+    public ?string $resource_id = null;
+    public ?string $search = null;
+    public bool $done = false;
     protected $listeners = [
-        'TaskAdded'    => 'render',
-        'TaskUpdated'  => 'render',
-        'TasksDeleted' => 'render',
+        'TaskAdded'     => 'render',
+        'TaskUpdated'   => 'render',
+        'TaskDeleted'   => 'render',
+        'SearchTask'    => 'search',
     ];
-    public bool $displayDoneTasks = false;
 
     public function mount(?string $project_id = null)
     {
         $this->project_id = $project_id;
         $this->initTasks();
+    }
+
+    public function search(array $data)
+    {
+        $this->search      = $data['search'];
+        $this->project_id  = $data['project_id'];
+        $this->done        = $data['done'];
+        $this->resource_id = $data['resource_id'];
     }
 
     public function edit(string $id, ?string $project_id = null)
@@ -43,14 +53,32 @@ class Table extends Component
         return view('livewire.tasks.table', compact('tasks'));
     }
 
+    public function changeStatus(string $id)
+    {
+        $task       = Task::find($id);
+        $task->done = ! $task->done;
+        $task->save();
+        $this->emit('StatusChanged');
+    }
+
     private function initTasks()
     {
-        if ( empty($this->project_id) ) {
-            return $this->tasks ?? Task::orderBy('day')->paginate(25);
+        if ( ! empty($this->project_id) ) {
+            $project = Project::find($this->project_id);
+
+            $tasks = $project->tasks()->orderBy('day')->where('title', 'LIKE', "%$this->search%");
+        }
+        else {
+            $tasks = Task::orderBy('day')->where('title', 'LIKE', "%$this->search%");
         }
 
-        $project = Project::find($this->project_id);
+        $tasks = $tasks->where('done', $this->done);
 
-        return $this->tasks ?? $project->tasks()->orderBy('day')->paginate(25);
+        if ( $this->resource_id ) {
+            $tasks = $tasks->where('resource_id', $this->resource_id);
+        }
+        $tasks = $tasks->paginate(25);
+
+        return $tasks;
     }
 }

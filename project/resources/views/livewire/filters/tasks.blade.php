@@ -21,21 +21,28 @@
       </div>
     </div>
     <div class="h-4"></div>
+    <div class="flex flex-col">
+      <label for="resource_id">
+        Responsable :
+      </label>
+      <select name="resource_id" id="resource_id"
+              class="border border-solid border-gray-500 rounded-sm px-4"
+              wire:model="resource_id" wire:click="search">
+        <option value="">-</option>
+        @foreach($selectResources as $i => $n)
+          <option value="{{ $i }}">{{ $n }}</option>
+        @endforeach
+      </select>
+    </div>
+    <div class="h-4"></div>
     <div class="flex items-center">
       <input type="checkbox" id="done" name="done"
              class="mr-2"
-             @if($displayDoneTasks)checked="checked"@endif>
+             @if($done)checked="checked"@endif>
       <label class="cursor-pointer" for="done" wire:click="toggleDisplayDoneTasks">
         Afficher les tickets effectués
       </label>
     </div>
-    <div class="flex justify-end">
-      <span class="px-2 bg-blue-500 text-gray-100 rounded-sm cursor-pointer"
-            wire:click="search">
-        Trouver
-      </span>
-    </div>
-
   </div>
 
 </div>

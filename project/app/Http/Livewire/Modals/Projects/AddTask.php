@@ -44,11 +44,13 @@ class AddTask extends Component
 
     public function addTask(string $id, ?string $client_id = null)
     {
-        $rules     = ( new AddTaskToProjectRequest() )->rules();
-        $validated = $this->validate($rules);
-        $project   = Project::find($id);
+        $rules             = ( new AddTaskToProjectRequest() )->rules();
+        $validated         = $this->validate($rules);
+        $project           = Project::find($id);
 
-        $project->tasks()->create($validated);
+        $task = $project->tasks()->create($validated);
+        $task->done = false;
+        $task->save();
 
         $this->toggle($id);
         $this->emit('TaskAdded');
