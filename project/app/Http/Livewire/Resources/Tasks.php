@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Resources;
 
 use App\Resource;
+use App\Task;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -39,4 +40,11 @@ class Tasks extends Component
         $this->emit('DeleteTask', $id);
     }
 
+    public function changeStatus(string $id)
+    {
+        $task       = Task::find($id);
+        $task->done = ! $task->done;
+        $task->save();
+        $this->emit('StatusChanged');
+    }
 }
