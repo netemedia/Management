@@ -1384,7 +1384,7 @@
             "version": "dev-master",
             "dist": {
                 "type": "path",
-                "url": "/srv/app/packages/Netemedia/Component",
+                "url": "./packages/Netemedia/Component",
                 "reference": "fffdf342366e9b767a8e25f5b762545dd2378b2f"
             },
             "require": {
