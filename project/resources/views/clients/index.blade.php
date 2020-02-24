@@ -13,8 +13,14 @@
 @endsection
 
 @section('content')
-  <section class="flex -mx-4">
-    @include('clients.components.forms.index')
-    @include('clients.components.tables.index')
+  <section class="flex -mx-4 items-start">
+    <div class="w-1/4 bg-white rounded shadow mx-4">
+      @livewire('filters.clients')
+      @livewire('clients.add')
+    </div>
+    @livewire('clients.table')
+    @livewire('modals.clients.edit')
+    @livewire('modals.clients.delete')
+    @livewire('modals.clients.add-project')
   </section>
 @endsection

@@ -2,9 +2,12 @@
 <html lang="fr">
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>@yield('title') - Coruscant</title>
   <link rel="stylesheet" href="{{ asset('css/main.css') }}">
   <link rel="stylesheet" href="{{ asset('vendor/codyhouse-schedule/css/style.css') }}">
+  <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+  @livewireStyles
   @yield('head')
 </head>
 <body class="mx-auto bg-gray-200">
@@ -41,6 +44,7 @@
   </main>
 </div>
 
+@livewireScripts
 <script src="https://unpkg.com/jam-icons/js/jam.min.js"></script>
 @yield('scripts')
 </body>

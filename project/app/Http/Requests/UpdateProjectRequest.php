@@ -15,7 +15,6 @@ class UpdateProjectRequest extends FormRequest
     {
         return [
             'name'      => 'required|min:3',
-            'client_id' => 'required|exists:clients,id',
             'lead'      => 'nullable|exists:resources,id',
             'manager'   => 'nullable|exists:resources,id',
         ];

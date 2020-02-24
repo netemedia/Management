@@ -15,8 +15,8 @@
 </div>
 
 <div class="my-4 -mx-2">
-  {{ Form::label('start_date', 'Début', ['class' => 'mx-2']) }}
-  {{ Form::date('start_date', null, ['class' => 'border-2']) }}
+  {{ Form::label('days', 'Début', ['class' => 'mx-2']) }}
+  {{ Form::date('days', null, ['class' => 'border-2']) }}
 
   {{ Form::label('start_hour', 'Heure', ['class' => 'mx-2']) }}
   {{ Form::select('start_hour', $hours, null, ['placeholder' => '-', 'class' => 'border-2']) }}

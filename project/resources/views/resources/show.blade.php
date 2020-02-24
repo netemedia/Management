@@ -5,9 +5,11 @@
 @endsection
 
 @section('content')
-  <h1>{{ $resource->name }}</h1>
-  @include('resources.components.tables.tasks')
-  {{ $tasks->appends(app('request')->all())->links() }}
+  <section class="flex -mx-4 items-start">
+    @livewire('resources.tasks', $resource->id)
+    @livewire('modals.tasks.edit')
+    @livewire('modals.tasks.delete')
+  </section>
 @endsection
 
 @section('note')

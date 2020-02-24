@@ -17,8 +17,8 @@ class CreateProjectResourceTable extends Migration
             $table->uuid('project_id');
             $table->uuid('resource_id');
             $table->string('position')->nullable();
+            $table->timestamps();
 
-            $table->primary(['project_id', 'resource_id']);
             $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
             $table->foreign('resource_id')->references('id')->on('resources')->onDelete('cascade');
         });

@@ -10,20 +10,16 @@ use App\Traits\UsesUuid;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
-class Task extends Model implements DurationInterface, MomentInterface
+class Task extends Model implements MomentInterface
 {
     use UsesUuid;
     protected $fillable = [
         'title',
         'url',
-        'effort',
         'estimation',
-        'start_date',
-        'start_hour',
-        'limit_date',
+        'day',
         'project_id',
         'resource_id',
-        'task_id',
     ];
 
     public function project()
@@ -38,27 +34,10 @@ class Task extends Model implements DurationInterface, MomentInterface
 
     public function getMomentAttribute() : string
     {
-        if ( ! $this->start_date ) {
+        if ( ! $this->day ) {
             return '-';
         }
 
-        return Carbon::createFromFormat('Y-m-d', $this->start_date)->locale('fr_FR')->isoFormat('dddd DD MMMM');
-    }
-
-    public function getHumanReadableDurationAttribute() : string
-    {
-        return Time::fromInt($this->estimation);
-    }
-
-    public function getHumanReadableStartTimeAttribute() : string
-    {
-        return Time::fromInt($this->start_hour, 9);
-    }
-
-    public function getHumanReadableEndTimeAttribute() : string
-    {
-        $end_hour = $this->start_hour + $this->estimation;
-
-        return Time::fromInt($end_hour, 9);
+        return Carbon::createFromFormat('Y-m-d', $this->day)->locale('fr_FR')->isoFormat('dddd DD MMMM');
     }
 }

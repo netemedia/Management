@@ -95,7 +95,7 @@ class ProjectController extends Controller
     {
         $today = Carbon::now()->format('Y-m-d');
         $next  = Carbon::now()->addDays(5)->format('Y-m-d');
-        $tasks = $project->tasks()->orderBy('start_date')->whereBetween('start_date', [ $today, $next ])->paginate(10);
+        $tasks = $project->tasks()->orderBy('day')->whereBetween('day', [ $today, $next ])->paginate(10);
 
         return view('projects.show', compact('project', 'tasks'));
     }

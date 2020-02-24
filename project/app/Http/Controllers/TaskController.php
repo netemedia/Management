@@ -22,13 +22,13 @@ class TaskController extends Controller
         $projects  = $request->query('projects');
         $resources = $request->query('resources');
 
-        $tasks = Task::orderBy('start_date', 'DESC')->orderBy('start_hour', 'DESC')->paginate(10);
+        $tasks = Task::orderBy('day', 'DESC')->paginate(10);
 
         $selectProjects  = ProjectForm::select();
         $selectResources = ResourceForm::select();
         $selectTasks     = TaskForm::select();
 
-        return view('tasks.index', compact('tasks', 'selectProjects', 'selectResources', 'selectTasks'));
+        return view('tasks.index', compact('tasks', 'selectProjects', 'selectResources'));
     }
 
     public function create()

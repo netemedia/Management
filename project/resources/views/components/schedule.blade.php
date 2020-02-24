@@ -13,7 +13,7 @@
         <div class="cd-schedule__top-info"><span>Lundi {{ $week[0]->format('d/m/Y') }}</span></div>
 
         <ul>
-          @foreach($resource->tasks->where('start_date', $week[0]->format('Y-m-d')) as $task)
+          @foreach($resource->tasks->where('day', $week[0]->format('Y-m-d')) as $task)
             @if(isset($hours[$task->start_hour]) && isset($hours[$task->start_hour + $task->estimation * 2]))
               @php $event = $task->project->name === 'Indisp.' ? 4 : 1 @endphp
               <li class="cd-schedule__event">
@@ -38,7 +38,7 @@
         <div class="cd-schedule__top-info"><span>Mardi {{ $week[1]->format('d/m/Y') }}</span></div>
 
         <ul>
-          @foreach($resource->tasks->where('start_date', $week[1]->format('Y-m-d')) as $task)
+          @foreach($resource->tasks->where('day', $week[1]->format('Y-m-d')) as $task)
             @if(isset($hours[$task->start_hour]) && isset($hours[$task->start_hour + $task->estimation * 2]))
               @php $event = $task->project->name === 'Indisp.' ? 4 : 1 @endphp
               <li class="cd-schedule__event">
@@ -63,7 +63,7 @@
         <div class="cd-schedule__top-info"><span>Mercredi {{ $week[2]->format('d/m/Y') }}</span></div>
 
         <ul>
-          @foreach($resource->tasks->where('start_date', $week[2]->format('Y-m-d')) as $task)
+          @foreach($resource->tasks->where('day', $week[2]->format('Y-m-d')) as $task)
             @if(isset($hours[$task->start_hour]) && isset($hours[$task->start_hour + $task->estimation * 2]))
               @php $event = $task->project->name === 'Indisp.' ? 4 : 1 @endphp
               <li class="cd-schedule__event">
@@ -88,7 +88,7 @@
         <div class="cd-schedule__top-info"><span>Jeudi {{ $week[3]->format('d/m/Y') }}</span></div>
 
         <ul>
-          @foreach($resource->tasks->where('start_date', $week[3]->format('Y-m-d')) as $task)
+          @foreach($resource->tasks->where('day', $week[3]->format('Y-m-d')) as $task)
             @if(isset($hours[$task->start_hour]) && isset($hours[$task->start_hour + $task->estimation * 2]))
               @php $event = $task->project->name === 'Indisp.' ? 4 : 1 @endphp
               <li class="cd-schedule__event">
@@ -113,7 +113,7 @@
         <div class="cd-schedule__top-info"><span>Vendredi {{ $week[4]->format('d/m/Y') }}</span></div>
 
         <ul>
-          @foreach($resource->tasks->where('start_date', $week[4]->format('Y-m-d')) as $task)
+          @foreach($resource->tasks->where('day', $week[4]->format('Y-m-d')) as $task)
             @if(isset($hours[$task->start_hour]) && isset($hours[$task->start_hour + $task->estimation * 2]))
               @php $event = $task->project->name === 'Indisp.' ? 4 : 1 @endphp
               <li class="cd-schedule__event">

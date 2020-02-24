@@ -18,36 +18,8 @@
 
 @section('content')
   <section class="flex -mx-4">
-    <div class="w-1/4 bg-white rounded shadow mx-4 overflow-hidden">
-      <div class="h-4"></div>
 
-      <div class="px-4">
-        <div>
-          <p class="text-base font-semibold text-gray-800">
-            Tickets terminés
-          </p>
-        </div>
-        <div class="flex justify-end">
-          <p class="text-gray-700">
-          <span class="text-lg">
-            35
-          </span>
-          </p>
-        </div>
-      </div>
-
-      <div class="h-4"></div>
-
-      <div>
-        <div class="w-full bg-gray-300 h-1 overflow-hidden">
-          <div class="bg-gradient-greens h-full" style="width: 73%;"></div>
-        </div>
-      </div>
-      <div class="bg-gradient-greens px-4 py-2">
-        <p class="text-sm text-gray-100">Total: 48</p>
-      </div>
-
-    </div>
+    @livewire('tasks.month', 'Tickets du mois')
 
     <div class="w-1/4 bg-white rounded shadow mx-4 overflow-hidden">
       <div class="h-4"></div>
@@ -143,80 +115,12 @@
   <div class="h-8"></div>
 
   <section class="flex -mx-4">
-    <div class="w-1/4 bg-white rounded shadow mx-4 px-4">
-      <div class="h-4"></div>
 
-      <div class="flex align-center">
+    @livewire('tasks.year')
 
-        <div class="w-20 flex items-center justify-center mr-2">
-          <span data-jam="book" data-width="48" data-height="48" class="text-teal-500 fill-current"></span>
-        </div>
+    @livewire('projects.year')
 
-        <div>
-          <p class="text-base text-gray-600">
-            Total tickets traités
-          </p>
-          <p class="text-gray-800">
-          <span class="text-lg">
-            578
-          </span>
-          </p>
-        </div>
-
-      </div>
-
-      <div class="h-4"></div>
-    </div>
-
-    <div class="w-1/4 bg-white rounded shadow mx-4 px-4">
-      <div class="h-4"></div>
-
-      <div class="flex align-center">
-
-        <div class="w-20 flex items-center justify-center mr-2">
-          <span data-jam="feather" data-width="48" data-height="48" class="text-green-500 fill-current"></span>
-        </div>
-
-        <div>
-          <p class="text-base text-gray-600">
-            Projets terminés
-          </p>
-          <p class="text-gray-800">
-          <span class="text-lg">
-            205
-          </span>
-          </p>
-        </div>
-
-      </div>
-
-      <div class="h-4"></div>
-    </div>
-
-    <div class="w-1/4 bg-white rounded shadow mx-4 px-4">
-      <div class="h-4"></div>
-
-      <div class="flex align-center">
-
-        <div class="w-20 flex items-center justify-center mr-2">
-          <span data-jam="users" data-width="48" data-height="48" class="text-red-500 fill-current"></span>
-        </div>
-
-        <div>
-          <p class="text-base text-gray-600">
-            Clients satisfaits
-          </p>
-          <p class="text-gray-800">
-          <span class="text-lg">
-            25
-          </span>
-          </p>
-        </div>
-
-      </div>
-
-      <div class="h-4"></div>
-    </div>
+    @livewire('clients.satisfaction', 'Clients satisfaits')
 
     <div class="w-1/4 bg-white rounded shadow mx-4 px-4">
       <div class="h-4"></div>
@@ -248,26 +152,9 @@
 
   <div class="h-8"></div>
 
-  @comp('App\Http\View\Components\LastTickets')
+  @livewire('tasks.recent', 'Tickets récents')
 
 @endsection
-
-{{--
-@section('content')
-  @include('components.dashboard.forms.main')
-  @if($resource)
-    @include('components.schedule')
-  @else
-    <div class="bg-blue-100 border border-blue-400 p-4 my-4">
-      <p>Vous ne semblez pas encore avoir de ressources,
-        <a class="text-blue-500" href="{{ route('resources.create') }}">
-          Ajoutez-en une !
-        </a>
-      </p>
-    </div>
-  @endif
-@endsection
---}}
 
 @section('scripts')
   <script src="{{ asset('vendor/codyhouse-schedule/js/util.js') }}"></script>

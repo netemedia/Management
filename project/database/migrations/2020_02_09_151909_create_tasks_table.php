@@ -20,9 +20,8 @@ class CreateTasksTable extends Migration
             $table->boolean('done')->nullable();
             $table->string('title');
             $table->string('url')->nullable();
-            $table->unsignedTinyInteger('estimation')->nullable();
-            $table->date('start_date')->nullable();
-            $table->unsignedTinyInteger('start_hour')->nullable();
+            $table->string('estimation')->nullable();
+            $table->date('day')->nullable();
             $table->timestamps();
 
             $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');

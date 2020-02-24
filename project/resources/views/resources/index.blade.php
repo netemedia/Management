@@ -4,12 +4,22 @@
   Ressources
 @endsection
 
+@section('subtitle')
+  Ça, c'est les gens font des merveilles chez Netemedia
+@endsection
+
+@section('breadcrumb')
+  @comp('App\Http\View\Components\Breadcrumb')
+@endsection
+
 @section('content')
-  <h1>Ressources</h1>
-  @include('resources.components.tables.index')
-  {{ $resources->appends(app('request')->all())->links() }}
-  <h2>Ajouter une ressource</h2>
-  <div class="h-8"></div>
-  @include('resources.components.forms.create')
-  @include('components.errors')
+  <section class="flex -mx-4 items-start">
+    <div class="w-1/4 bg-white rounded shadow mx-4">
+      @livewire('filters.resources')
+      @livewire('resources.add')
+    </div>
+    @livewire('resources.table')
+    @livewire('modals.resources.edit')
+    @livewire('modals.resources.delete')
+  </section>
 @endsection

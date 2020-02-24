@@ -27,16 +27,7 @@ class MenuComposer
                                                                               ->add(Link::toRoute('resources.index', 'Ressources')
                                                                                         ->addClass($class))
                                                                               ->add(Link::toRoute('tasks.index', 'Ticket')
-                                                                                        ->addClass($class)))
-                     ->submenu('<span class="uppercase">Créer</span>', Menu::new()
-                                                                           ->add(Link::toRoute('clients.create', 'Client')
-                                                                                     ->addClass($class))
-                                                                           ->add(Link::toRoute('projects.create', 'Projet')
-                                                                                     ->addClass($class))
-                                                                           ->add(Link::toRoute('resources.create', 'Ressource')
-                                                                                     ->addClass($class))
-                                                                           ->add(Link::toRoute('tasks.create', 'Ticket')
-                                                                                     ->addClass($class)));
+                                                                                        ->addClass($class)));
 
         $view->with('menu', $menu);
     }

@@ -21,14 +21,16 @@ class ProjectResourceBehavior
     {
         /** @var Resource[] $resources */
         foreach ( $resources as $position => $id ) {
-            $resource = Resource::findOrFail($id);
-            if($already = $this->project->getPosition($position)) {
-                $this->unassignResource($already);
-            }
-            $this->assignResource($resource);
-            if ( $assignment = $this->findAssignment($id) ) {
-                $assignment->pivot->position = $position;
-                $assignment->pivot->save();
+            $resource = Resource::find($id);
+            if($resource) {
+                if($already = $this->project->getPosition($position)) {
+                    $this->unassignResource($already);
+                }
+                $this->assignResource($resource);
+                if ( $assignment = $this->findAssignment($id) ) {
+                    $assignment->pivot->position = $position;
+                    $assignment->pivot->save();
+                }
             }
         }
     }

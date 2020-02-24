@@ -20,9 +20,9 @@ class AgendaController extends Controller
         $carbon = new Carbon($request->get('date', null));
         $date   = $carbon->format('Y-m-d');
         $next   = $carbon->endOfWeek()->format('Y-m-d');
-        $tasks  = Task::where('start_date', '>=', $date)
-                      ->where('start_date', '<=', $next)
-                      ->orderBy('start_date')
+        $tasks  = Task::where('day', '>=', $date)
+                      ->where('day', '<=', $next)
+                      ->orderBy('day')
                       ->paginate(25);
 
         return view('agenda', compact('tasks', 'date', 'next'));

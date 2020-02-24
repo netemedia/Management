@@ -48,6 +48,16 @@ class Project extends Model implements LinkInterface
         return "/projects/{$this->id}";
     }
 
+    public function getLeadAttribute() : ?string
+    {
+        return $this->getPosition('lead') ? $this->getPosition('lead')->id : null;
+    }
+
+    public function getManagerAttribute() : ?string
+    {
+        return $this->getPosition('manager') ? $this->getPosition('manager')->id : null;
+    }
+
     /**
      * @param string $position
      *

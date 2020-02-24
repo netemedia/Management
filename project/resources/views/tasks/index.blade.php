@@ -1,15 +1,21 @@
 @extends('app')
 
 @section('title')
-  Tâches
+  Tickets
+@endsection
+
+@section('subtitle')
+  Les trucs que l'équipe doit faire
+@endsection
+
+@section('breadcrumb')
+  @comp('App\Http\View\Components\Breadcrumb')
 @endsection
 
 @section('content')
-  <h1>Tâches</h1>
-  @include('tasks.components.tables.index')
-  {{ $tasks->appends(app('request')->all())->links() }}
-  <h2>Ajouter une tâche</h2>
-  <div class="h-8"></div>
-  @include('tasks.components.forms.create')
-  @include('components.errors')
+  <section class="flex -mx-4 items-start">
+    @livewire('tasks.table')
+    @livewire('modals.tasks.edit')
+    @livewire('modals.tasks.delete')
+  </section>
 @endsection

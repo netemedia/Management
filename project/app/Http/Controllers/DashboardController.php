@@ -17,7 +17,7 @@ class DashboardController extends Controller
         $week            = $this->getWeek($request);
         $selectResources = ResourceForm::select();
 
-        $tasks = Task::orderBy('start_date', 'DESC')->paginate(10);
+        $tasks = Task::orderBy('day', 'DESC')->paginate(10);
 
         return view('dashboard');
     }

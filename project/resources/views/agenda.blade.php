@@ -28,8 +28,8 @@
   <div class="h-8"></div>
 
   <section class="flex -mx-4">
-    @comp('App\Http\View\Components\WeekTasks')
-    @comp('App\Http\View\Components\DayTasks')
+    @livewire('tasks.day', 'Avancement de la journée')
+    @livewire('tasks.week', 'Avancement de la semaine')
   </section>
 
   <div class="h-8"></div>
@@ -62,8 +62,7 @@
 
 
               @if($task->done)
-                {!! Form::status('Terminé', 'bg-gradient-greens rounded-sm text-white px-2 py-1 text-xs
-                cursor-pointer') !!}
+                {!! Form::status('Terminé', 'bg-gradient-greens rounded-sm text-white px-2 py-1 text-xs cursor-pointer') !!}
               @else
                 {!! Form::status('Ouvert', 'bg-gradient-pinks rounded-sm text-white px-2 py-1 text-xs
                 cursor-pointer')

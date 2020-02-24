@@ -4,10 +4,16 @@
   {{ $project->name }}
 @endsection
 
+@section('breadcrumb')
+  @comp('App\Http\View\Components\Breadcrumb')
+@endsection
+
 @section('content')
-  <h1>{{ $project->client->name }} | {{ $project->name }}</h1>
-  @include('projects.components.tables.tasks')
-  {{ $tasks->appends(app('request')->all())->links() }}
+  <section class="flex -mx-4 items-start">
+    @livewire('tasks.table', $project->id)
+    @livewire('modals.tasks.edit', $project->id)
+    @livewire('modals.tasks.delete', $project->id)
+  </section>
 @endsection
 
 @section('note')

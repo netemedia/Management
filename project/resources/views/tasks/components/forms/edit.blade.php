@@ -17,8 +17,8 @@
 </div>
 
 <div class="my-4 -mx-2">
-  {{ Form::label('start_date', 'Début', ['class' => 'mx-2']) }}
-  {{ Form::date('start_date', $task->start_date, ['class' => 'border-2']) }}
+  {{ Form::label('day', 'Début', ['class' => 'mx-2']) }}
+  {{ Form::date('day', $task->day, ['class' => 'border-2']) }}
 
   {{ Form::label('start_hour', 'Heure', ['class' => 'mx-2']) }}
   {{ Form::select('start_hour', $hours, $task->start_hour, ['placeholder' => '-', 'class' => 'border-2']) }}

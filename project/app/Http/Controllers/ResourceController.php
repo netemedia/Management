@@ -12,9 +12,16 @@ use Illuminate\Http\Request;
 
 class ResourceController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $resources = Resource::orderBy('first_name')->paginate(25);
+        $search    = $request->get('search');
+        $resources = Resource::orderBy('first_name');
+
+        if ( $search ) {
+            $resources = $resources->where('first_name', 'LIKE', "%$search%")->orWhere('last_name', 'LIKE', "%$search%");
+        }
+
+        $resources = $resources->paginate(25);
 
         return view('resources.index', compact('resources'));
     }
@@ -49,7 +56,7 @@ class ResourceController extends Controller
     {
         $today = Carbon::now()->format('Y-m-d');
         $next  = Carbon::now()->addDays(5)->format('Y-m-d');
-        $tasks = $resource->tasks()->orderBy('start_date')->whereBetween('start_date', [ $today, $next ])->paginate(10);
+        $tasks = $resource->tasks()->orderBy('day')->whereBetween('day', [ $today, $next ])->paginate(10);
 
         return view('resources.show', compact('resource', 'tasks'));
     }
