@@ -1,4 +1,4 @@
-<div class="w-1/4 bg-white rounded shadow mx-4 overflow-hidden relative">
+<div class="w-1/3 bg-white rounded shadow mx-4 overflow-hidden relative">
   <div class="h-4"></div>
 
   <div class="absolute right-0 top-0 pt-2 pr-2">
