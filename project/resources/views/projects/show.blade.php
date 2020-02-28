@@ -12,6 +12,7 @@
   <section class="flex -mx-4 items-start">
     <div class="w-1/4 bg-white rounded shadow mx-4">
       @livewire('filters.tasks', $project->id)
+      @livewire('tasks.add', $project->id)
     </div>
     @livewire('tasks.table', $project->id)
     @livewire('modals.tasks.edit', $project->id)
