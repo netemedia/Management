@@ -21,7 +21,7 @@
 
     @livewire('tasks.month', 'Tickets du mois')
 
-    <div class="w-1/4 bg-white rounded shadow mx-4 overflow-hidden">
+    <div class="w-1/3 bg-white rounded shadow mx-4 overflow-hidden">
       <div class="h-4"></div>
 
       <div class="px-4">
@@ -52,38 +52,7 @@
 
     </div>
 
-    <div class="w-1/4 bg-white rounded shadow mx-4 overflow-hidden">
-      <div class="h-4"></div>
-
-      <div class="px-4">
-        <div>
-          <p class="text-base font-semibold text-gray-800">
-            Tickets terminés
-          </p>
-        </div>
-        <div class="flex justify-end">
-          <p class="text-gray-700">
-          <span class="text-lg">
-            35
-          </span>
-          </p>
-        </div>
-      </div>
-
-      <div class="h-4"></div>
-
-      <div>
-        <div class="w-full bg-gray-300 h-1 overflow-hidden">
-          <div class="bg-gradient-reds h-full" style="width: 43%;"></div>
-        </div>
-      </div>
-      <div class="bg-gradient-reds px-4 py-2">
-        <p class="text-sm text-gray-100">Total: 48</p>
-      </div>
-
-    </div>
-
-    <div class="w-1/4 bg-white rounded shadow mx-4 px-4">
+    <div class="w-1/3 bg-white rounded shadow mx-4 px-4">
       <div class="h-4"></div>
 
       <div>
