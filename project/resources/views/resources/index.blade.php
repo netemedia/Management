@@ -5,7 +5,7 @@
 @endsection
 
 @section('subtitle')
-  Ça, c'est les gens font des merveilles chez Netemedia
+  Ça, c'est les gens qui font des merveilles chez Netemedia
 @endsection
 
 @section('breadcrumb')
@@ -13,12 +13,14 @@
 @endsection
 
 @section('content')
-  <section class="flex -mx-4 items-start">
-    <div class="w-1/4 bg-white rounded shadow mx-4">
+  <section class="flex -mx-4 items-start flex-col lg:flex-row">
+    <div class="bg-white rounded shadow mx-4 lg:w-3/4">
+      @livewire('resources.table')
+    </div>
+    <div class="bg-white rounded shadow my-4 mx-4 lg:my-0 ">
       @livewire('filters.resources')
       @livewire('resources.add')
     </div>
-    @livewire('resources.table')
     @livewire('modals.resources.edit')
     @livewire('modals.resources.delete')
   </section>

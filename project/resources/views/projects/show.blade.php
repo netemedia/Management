@@ -9,11 +9,14 @@
 @endsection
 
 @section('content')
-  <section class="flex -mx-4 items-start">
-    <div class="w-1/4 bg-white rounded shadow mx-4">
-      @livewire('filters.tasks', $project->id)
+  <section class="flex -mx-4 items-start flex-col lg:flex-row">
+    <div class="bg-white rounded shadow mx-4 lg:w-3/4">
+      @livewire('tasks.table', $project->id)
     </div>
-    @livewire('tasks.table', $project->id)
+    <div class="bg-white rounded shadow my-4 mx-4 lg:my-0 ">
+      @livewire('filters.tasks', $project->id)
+      @livewire('tasks.add', $project->id)
+    </div>
     @livewire('modals.tasks.edit', $project->id)
     @livewire('modals.tasks.delete', $project->id)
   </section>

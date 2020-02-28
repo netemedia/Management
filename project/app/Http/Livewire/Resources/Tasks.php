@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Resources;
 
+use App\Project;
 use App\Resource;
 use App\Task;
 use Livewire\Component;
@@ -11,21 +12,30 @@ class Tasks extends Component
 {
     use WithPagination;
     public string $resource_id;
+    public ?string $search = null;
+    public bool $done = false;
     protected $listeners = [
         'TaskAdded'    => 'render',
         'TaskUpdated'  => 'render',
         'TasksDeleted' => 'render',
+        'SearchTask'   => 'search',
     ];
+
+    public function search(array $data)
+    {
+        $this->search = $data['search'];
+        $this->done   = $data['done'];
+    }
 
     public function mount(string $resource_id)
     {
         $this->resource_id = $resource_id;
+        $this->initTasks();
     }
 
     public function render()
     {
-        $resource = Resource::find($this->resource_id);
-        $tasks    = $resource->tasks()->orderBy('day')->paginate(25);
+        $tasks = $this->initTasks();
 
         return view('livewire.resources.tasks', compact('tasks'));
     }
@@ -38,6 +48,18 @@ class Tasks extends Component
     public function delete(string $id)
     {
         $this->emit('DeleteTask', $id);
+    }
+
+    private function initTasks()
+    {
+        $resource = Resource::find($this->resource_id);
+        $tasks    = $resource->tasks()
+                             ->where('done', $this->done)
+                             ->where('title', 'LIKE', "%{$this->search}%")
+                             ->orderBy('day')
+                             ->paginate(25);
+
+        return $tasks;
     }
 
     public function changeStatus(string $id)

@@ -4,7 +4,6 @@ namespace App\Http\Livewire\Tasks;
 
 use App\Project;
 use App\Task;
-use Illuminate\Contracts\Pagination\Paginator;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -16,10 +15,10 @@ class Table extends Component
     public ?string $search = null;
     public bool $done = false;
     protected $listeners = [
-        'TaskAdded'     => 'render',
-        'TaskUpdated'   => 'render',
-        'TaskDeleted'   => 'render',
-        'SearchTask'    => 'search',
+        'TaskAdded'   => 'render',
+        'TaskUpdated' => 'render',
+        'TaskDeleted' => 'render',
+        'SearchTask'  => 'search',
     ];
 
     public function mount(?string $project_id = null)
