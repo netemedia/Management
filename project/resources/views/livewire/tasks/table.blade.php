@@ -14,31 +14,15 @@
     @foreach($tasks as $task)
       <tr>
         <td class="p-4">
-          @if($task->done)
-            <span wire:click="changeStatus('{{ $task->id }}')"
-                  class="bg-gradient-greens rounded-sm text-white px-2 py-1 text-xs cursor-pointer">
-                <i class="las la-check"></i>
-              </span>
-          @else
-            <span wire:click="changeStatus('{{ $task->id }}')"
-                  class="bg-gradient-reds rounded-sm text-white px-2 py-1 text-xs cursor-pointer">
-                <i class="las la-asterisk"></i>
-              </span>
-          @endif
+          @include('components/atoms/tasks/status')
         </td>
         <td class="p-4 text-sm">@if($task->estimation) {{ $task->estimation }}h @else - @endif</td>
         <td class="p-4 text-sm">
-          {{ $task->project->client->name }} | {{ $task->project->name }}
-          <br>
-          @if($task->url)
-            <a class="text-blue-500 no-underline" href="{{ $task->url }}" target="_blank">
-              {{ $task->title }}
-            </a>
-          @else
-            {{ $task->title }}
-          @endif
+          @include('components/atoms/tasks/subject')
         </td>
-        <td class="p-4 text-sm">@if($task->resource) {{ $task->resource->name }} @else - @endif</td>
+        <td class="p-4 text-sm">
+          @include('components/atoms/tasks/resource')
+        </td>
         <td class="p-4 text-sm">{{ $task->moment }}</td>
         <td class="p-4 flex">
           <span class="go" wire:click="edit('{{$task->id}}')">
