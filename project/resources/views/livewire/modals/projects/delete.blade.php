@@ -1,11 +1,9 @@
 <div>
   @if($opened)
-    <div class="fixed flex items-center justify-center top-0 left-0 right-0 bottom-0">
-      <div class="fixed top-0 left-0 right-0 bottom-0 bg-modalbg cursor-pointer" wire:click="toggle">
-
-      </div>
-      <div class="relative bg-white rounded-sm shadow-xl overflow-hidden">
-        <header class="text-white text-center w-full border-b bg-red-500 p-2">
+    <div class="modal">
+      <div class="modal-bg" wire:click="close"></div>
+      <div class="modal-body">
+        <header class="modal-header --danger">
           Euh... t'es sûr(e) de toi là ?
         </header>
 
@@ -15,17 +13,16 @@
           <p class="text-center">
             On supprime <span class="text-red-500 text-bold">{{ $name }}</span> ?
           </p>
+
           <div class="h-4"></div>
 
-          <div class="flex items-center justify-between -mx-2">
-        <span class="cursor-pointer text-white px-2 py-1 bg-teal-500 rounded-sm mx-2"
-              wire:click="toggle">
-          Nah
-        </span>
-            <span class="cursor-pointer text-white px-2 py-1 bg-red-500 rounded-sm mx-2"
-                  wire:click="delete">
-          Oui !
-        </span>
+          <div class="modal-actions">
+            <span class="button" wire:click="close">
+              Nah
+            </span>
+            <span class="button --danger" wire:click="destroy">
+              Oui !
+            </span>
           </div>
 
           <footer>

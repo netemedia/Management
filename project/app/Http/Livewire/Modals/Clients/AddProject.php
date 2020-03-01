@@ -36,7 +36,7 @@ class AddProject extends Component
         $this->clientName = $client ? $client->name : '';
     }
 
-    public function addProject(string $id)
+    public function create(string $id)
     {
         $rules     = ( new AddProjectToClientRequest() )->rules();
         $validated = $this->validate($rules);

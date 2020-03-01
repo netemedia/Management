@@ -28,7 +28,7 @@ class Delete extends Component
         $this->name = $client ? $client->name : '';
     }
 
-    public function delete()
+    public function destroy()
     {
         $client = Client::find($this->clientId);
         $client->delete();
