@@ -2,7 +2,7 @@
   @if($opened)
     <div class="modal">
       <div class="modal-bg" wire:click="close"></div>
-      <div class="modal-header">
+      <div class="modal-body">
         @include('components/molecules/modals/modal-header-danger')
 
         <div class="h-4"></div>
