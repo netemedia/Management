@@ -15,18 +15,12 @@ use Illuminate\Support\Arr;
 
 class TaskController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
-        $order     = $request->query('order', false);
-        $direction = $request->query('direction');
-        $projects  = $request->query('projects');
-        $resources = $request->query('resources');
-
         $tasks = Task::orderBy('day', 'DESC')->paginate(10);
 
         $selectProjects  = ProjectForm::select();
         $selectResources = ResourceForm::select();
-        $selectTasks     = TaskForm::select();
 
         return view('tasks.index', compact('tasks', 'selectProjects', 'selectResources'));
     }

@@ -17,7 +17,7 @@
     @livewire('projects.table', $client->id)
     @livewire('modals.projects.edit', $client->id)
     @livewire('modals.projects.delete', $client->id)
-    @livewire('modals.projects.add-task', $client->id)
+    @livewire('modals.projects.add-task')
   </section>
 @endsection
 

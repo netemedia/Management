@@ -23,7 +23,7 @@
           Nah
         </span>
             <span class="cursor-pointer text-white px-2 py-1 bg-red-500 rounded-sm mx-2"
-                  wire:click="delete">
+                  wire:click="destroy">
           Oui !
         </span>
           </div>

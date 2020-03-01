@@ -71,9 +71,9 @@ class Table extends Component
         $this->client_id = $client_id;
     }
 
-    public function addTask(string $id, ?string $client_id = null)
+    public function addTask(string $id)
     {
-        $this->emit('AddTaskToProject', $id, $this->client_id);
+        $this->emit('AddTaskToProject', $id);
     }
 
     public function order(string $field)

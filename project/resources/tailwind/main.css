@@ -1,9 +1,0 @@
-@tailwind base;
-
-@tailwind components;
-
-.go, a.go {
-  @apply text-blue-500 no-underline cursor-pointer;
-}
-
-@tailwind utilities;

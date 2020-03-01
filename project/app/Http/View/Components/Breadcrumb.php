@@ -21,7 +21,7 @@ class Breadcrumb extends Component
         if ( $uri && $uri !== '/' ) {
             $explode = explode("/", $uri);
             $route   = "";
-            foreach ( $explode as $k => $element ) {
+            foreach ( $explode as $element ) {
                 $route = $route ? "{$route}/{$element}" : "$element";
                 $menu->html('/', [ 'class' => 'mx-2' ])->add(Link::to("/$route", Str::ucfirst($element))
                                                                  ->addClass($class));

@@ -4,7 +4,7 @@
   <div class="flex align-center">
 
     <div class="w-20 flex items-center justify-center mr-2">
-      <i class="text-6xl text-green-500 fill-current las la-journal-whills"></i>
+      <i aria-hidden="true" class="text-6xl text-green-500 fill-current las la-journal-whills"></i>
     </div>
 
     <div>

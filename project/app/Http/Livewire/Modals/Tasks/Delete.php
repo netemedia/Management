@@ -2,17 +2,17 @@
 
 namespace App\Http\Livewire\Modals\Tasks;
 
+use App\Http\Livewire\ModalComponent;
+use App\Http\Livewire\Support\Destroyer;
 use App\Task;
-use Livewire\Component;
 
-class Delete extends Component
+class Delete extends ModalComponent implements Destroyer
 {
-    public bool $opened = false;
     public ?string $title = null;
     public ?string $project_id = null;
     public ?string $task_id = null;
     protected $listeners = [
-        'DeleteTask' => 'toggle',
+        'DeleteTask' => 'up',
     ];
 
     public function mount(?string $project_id = null)
@@ -25,19 +25,19 @@ class Delete extends Component
         return view('livewire.modals.tasks.delete');
     }
 
-    public function toggle(?string $id = null)
-    {
-        $this->opened  = ! $this->opened;
-        $task          = Task::find($id);
-        $this->task_id = $id;
-        $this->title   = $task ? $task->title : '';
-    }
-
-    public function delete()
+    public function destroy()
     {
         $task = Task::find($this->task_id);
         $task->delete();
         $this->emit('TaskDeleted', $this->project_id);
-        $this->toggle();
+        $this->close();
+    }
+
+    public function up(string $id)
+    {
+        $task          = Task::find($id);
+        $this->task_id = $id;
+        $this->title   = $task ? $task->title : '';
+        $this->open();
     }
 }
