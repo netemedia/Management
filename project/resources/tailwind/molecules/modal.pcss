@@ -1,0 +1,23 @@
+.modal {
+  @apply fixed flex items-center justify-center top-0 left-0 right-0 bottom-0;
+}
+
+.modal-bg {
+  @apply fixed top-0 left-0 right-0 bottom-0 bg-modalbg cursor-pointer;
+}
+
+.modal-body {
+  @apply relative bg-white rounded-sm shadow-xl overflow-hidden;
+}
+
+.modal-header {
+  @apply text-white text-center w-full border-b bg-blue-500 py-2 px-6;
+}
+
+.modal-header.--danger {
+  @apply bg-red-500;
+}
+
+.modal-actions {
+  @apply flex justify-between -mx-2;
+}

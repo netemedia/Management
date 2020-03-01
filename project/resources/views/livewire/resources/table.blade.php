@@ -1,44 +1,26 @@
-<table class="w-full table-auto">
-  <thead class="font-semibold text-gray-700">
+<table class="table">
+  <thead class="table-head">
   <tr>
-    <th class="p-4 w-64 text-left cursor-pointer" wire:click="order('first_name')">
-      @if('first_name' !== $order)
-        <i aria-hidden="true" class="las la-caret-right"></i>
-      @elseif('ASC' === $direction)
-        <i aria-hidden="true" class="las la-caret-up"></i>
-      @else
-        <i aria-hidden="true" class="las la-caret-down"></i>
-      @endif
+    <th scope="col" class="table-title --order w-64" wire:click="order('first_name')">
+      @include('components/atoms/order', ['order_field' => 'first_name'])
       Nom
     </th>
-    <th class="p-4 text-left cursor-pointer hidden md:table-cell" wire:click="order('projects_count')">
-      @if('projects_count' !== $order)
-        <i aria-hidden="true" class="las la-caret-right"></i>
-      @elseif('ASC' === $direction)
-        <i aria-hidden="true" class="las la-caret-up"></i>
-      @else
-        <i aria-hidden="true" class="las la-caret-down"></i>
-      @endif
+    <td class="table-title --order hidden md:table-cell" wire:click="order('projects_count')">
+      @include('components/atoms/order', ['order_field' => 'projects_count'])
       Projets
-    </th>
-    <th class="p-4 text-left cursor-pointer hidden md:table-cell" wire:click="order('tasks_count')">
-      @if('tasks_count' !== $order)
-        <i aria-hidden="true" class="las la-caret-right"></i>
-      @elseif('ASC' === $direction)
-        <i aria-hidden="true" class="las la-caret-up"></i>
-      @else
-        <i aria-hidden="true" class="las la-caret-down"></i>
-      @endif
+    </td>
+    <td class="table-title --order hidden md:table-cell" wire:click="order('tasks_count')">
+      @include('components/atoms/order', ['order_field' => 'tasks_count'])
       Tickets
-    </th>
-    <th class="p-4 text-left">Actions</th>
+    </td>
+    <td class="table-title">Actions</td>
   </tr>
   </thead>
-  <tbody class="border-t-2 border-solid border-gray-500">
+  <tbody class="table-body">
   @foreach($resources as $resource)
     <tr>
       <td class="p-4">
-        <a class="text-blue-500 no-underline" href="{{ $resource->link }}">
+        <a class="go" href="{{ $resource->link }}">
           {{ $resource->name }}
         </a>
       </td>

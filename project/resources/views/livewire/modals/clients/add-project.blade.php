@@ -63,7 +63,7 @@
             Annuler
           </span>
             <span class="cursor-pointer text-white px-2 py-1 bg-blue-500 rounded-sm mx-2"
-                  wire:click="addProject('{{ $clientId }}')">
+                  wire:click="create('{{ $clientId }}')">
             Ok
           </span>
           </div>

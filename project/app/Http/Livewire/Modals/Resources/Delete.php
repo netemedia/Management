@@ -2,16 +2,16 @@
 
 namespace App\Http\Livewire\Modals\Resources;
 
+use App\Http\Livewire\ModalComponent;
+use App\Http\Livewire\Support\Destroyer;
 use App\Resource;
-use Livewire\Component;
 
-class Delete extends Component
+class Delete extends ModalComponent implements Destroyer
 {
-    public bool $opened = false;
-    public string $name = '';
-    public ?string $resourceId = null;
+    public ?string $name = null;
+    public ?string $resource_id = null;
     protected $listeners = [
-        'DeleteResource' => 'toggle',
+        'DeleteResource' => 'up',
     ];
 
     public function render()
@@ -19,19 +19,19 @@ class Delete extends Component
         return view('livewire.modals.resources.delete');
     }
 
-    public function toggle(?string $id = null)
+    public function destroy()
     {
-        $this->opened     = ! $this->opened;
-        $this->resourceId = $id;
-        $resource         = Resource::find($this->resourceId);
-        $this->name       = $resource ? $resource->name : '';
-    }
-
-    public function delete()
-    {
-        $resource = Resource::find($this->resourceId);
+        $resource = Resource::find($this->resource_id);
         $resource->delete();
         $this->emit('ResourceDeleted');
-        $this->toggle();
+        $this->close();
+    }
+
+    public function up(string $id)
+    {
+        $this->resource_id = $id;
+        $resource          = Resource::find($this->resource_id);
+        $this->name        = $resource ? $resource->name : '';
+        $this->open();
     }
 }

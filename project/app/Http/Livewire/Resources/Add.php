@@ -2,11 +2,12 @@
 
 namespace App\Http\Livewire\Resources;
 
+use App\Http\Livewire\CreatorComponent;
+use App\Http\Livewire\Support\Form\Reinitable;
 use App\Http\Requests\CreateResourceRequest;
 use App\Resource;
-use Livewire\Component;
 
-class Add extends Component
+class Add extends CreatorComponent implements Reinitable
 {
     public ?string $first_name = null;
     public ?string $last_name = null;
@@ -16,7 +17,23 @@ class Add extends Component
         return view('livewire.resources.add');
     }
 
-    public function add()
+    public function reinit(?string $field = null)
+    {
+        if ( empty($field) ) {
+            $this->reinitAll();
+        }
+        else {
+            $this->$field = null;
+        }
+    }
+
+    public function reinitAll()
+    {
+        $this->last_name  = null;
+        $this->first_name = null;
+    }
+
+    public function create()
     {
         $rules     = ( new CreateResourceRequest() )->rules();
         $validated = $this->validate($rules);
@@ -24,16 +41,5 @@ class Add extends Component
 
         $this->emit('ResourceAdded');
         $this->reinit();
-    }
-
-    public function reinit(?string $field = null)
-    {
-        if ( empty($field) ) {
-            $this->last_name  = null;
-            $this->first_name = null;
-        }
-        else {
-            $this->$field = null;
-        }
     }
 }

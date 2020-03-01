@@ -2,14 +2,13 @@
 
 namespace App\Http\Livewire\Modals\Projects;
 
+use App\Http\Livewire\ModalComponent;
 use App\Http\Forms\ResourceForm;
 use App\Http\Requests\AddTaskToProjectRequest;
 use App\Project;
-use Livewire\Component;
 
-class AddTask extends Component
+class AddTask extends ModalComponent
 {
-    public bool $opened = false;
     public ?string $project_name = null;
     public ?string $project_id = null;
     public ?string $title = null;
@@ -19,13 +18,8 @@ class AddTask extends Component
     public ?string $resource_id = null;
     public ?string $client_id = null;
     protected $listeners = [
-        'AddTaskToProject' => 'toggle',
+        'AddTaskToProject' => 'up',
     ];
-
-    public function mount(?string $client_id = null)
-    {
-        $this->client_id = $client_id;
-    }
 
     public function render()
     {
@@ -34,25 +28,25 @@ class AddTask extends Component
         return view('livewire.modals.projects.add-task', compact('selectResources'));
     }
 
-    public function toggle(?string $id = null)
+    public function up(string $id)
     {
-        $this->opened       = ! $this->opened;
         $this->project_id   = $id;
         $project            = Project::find($id);
         $this->project_name = $project ? $project->name : '';
+        $this->open();
     }
 
-    public function addTask(string $id, ?string $client_id = null)
+    public function create(string $id)
     {
-        $rules             = ( new AddTaskToProjectRequest() )->rules();
-        $validated         = $this->validate($rules);
-        $project           = Project::find($id);
+        $rules     = ( new AddTaskToProjectRequest() )->rules();
+        $validated = $this->validate($rules);
+        $project   = Project::find($id);
 
-        $task = $project->tasks()->create($validated);
+        $task       = $project->tasks()->create($validated);
         $task->done = false;
         $task->save();
 
-        $this->toggle($id);
+        $this->close();
         $this->emit('TaskAdded');
     }
 }

@@ -13,12 +13,6 @@ class DashboardController extends Controller
 {
     public function __invoke(Request $request)
     {
-        $resource        = $this->getResource($request);
-        $week            = $this->getWeek($request);
-        $selectResources = ResourceForm::select();
-
-        $tasks = Task::orderBy('day', 'DESC')->paginate(10);
-
         return view('dashboard');
     }
 

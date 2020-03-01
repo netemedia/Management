@@ -3,12 +3,12 @@
 namespace App\Http\Livewire\Tasks;
 
 use App\Http\Forms\ResourceForm;
+use App\Http\Livewire\CreatorComponent;
 use App\Http\Livewire\Support\Form\Reinitable;
 use App\Http\Requests\AddTaskToProjectRequest;
 use App\Project;
-use Livewire\Component;
 
-class Add extends Component implements Reinitable
+class Add extends CreatorComponent implements Reinitable
 {
     public ?string $project_id = null;
     public ?string $title = null;
@@ -29,26 +29,13 @@ class Add extends Component implements Reinitable
         return view('livewire.tasks.add', compact('selectResources'));
     }
 
-    public function add()
+    public function reinit(?string $field = null)
     {
-        $rules     = ( new AddTaskToProjectRequest() )->rules();
-        $validated = $this->validate($rules);
-        $project   = Project::find($this->project_id);
-
-        $task       = $project->tasks()->create($validated);
-        $task->done = false;
-        $task->save();
-
-        $this->emit('TaskAdded');
-    }
-
-    public function reinit(?string $field)
-    {
-        if ( $field ) {
-            $this->$field = null;
+        if ( empty($field) ) {
+            $this->reinitAll();
         }
         else {
-            $this->reinitAll();
+            $this->$field = null;
         }
     }
 
@@ -59,5 +46,19 @@ class Add extends Component implements Reinitable
         $this->estimation  = null;
         $this->day         = null;
         $this->resource_id = null;
+    }
+
+    public function create()
+    {
+        $rules     = ( new AddTaskToProjectRequest() )->rules();
+        $validated = $this->validate($rules);
+        $project   = Project::find($this->project_id);
+
+        $task       = $project->tasks()->create($validated);
+        $task->done = false;
+        $task->save();
+
+        $this->emit('TaskAdded');
+        $this->reinit();
     }
 }
