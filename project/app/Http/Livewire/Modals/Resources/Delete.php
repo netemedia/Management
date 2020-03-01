@@ -8,9 +8,8 @@ use App\Resource;
 
 class Delete extends ModalComponent implements Destroyer
 {
-    public bool $opened = false;
-    public string $name = '';
-    public ?string $resourceId = null;
+    public ?string $name = null;
+    public ?string $resource_id = null;
     protected $listeners = [
         'DeleteResource' => 'up',
     ];
@@ -22,7 +21,7 @@ class Delete extends ModalComponent implements Destroyer
 
     public function destroy()
     {
-        $resource = Resource::find($this->resourceId);
+        $resource = Resource::find($this->resource_id);
         $resource->delete();
         $this->emit('ResourceDeleted');
         $this->close();
@@ -30,9 +29,9 @@ class Delete extends ModalComponent implements Destroyer
 
     public function up(string $id)
     {
-        $this->resourceId = $id;
-        $resource         = Resource::find($this->resourceId);
-        $this->name       = $resource ? $resource->name : '';
+        $this->resource_id = $id;
+        $resource          = Resource::find($this->resource_id);
+        $this->name        = $resource ? $resource->name : '';
         $this->open();
     }
 }
