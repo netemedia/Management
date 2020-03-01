@@ -6,11 +6,13 @@ use App\Client;
 use App\Http\Behaviors\ProjectResourceBehavior;
 use App\Http\Forms\ClientForm;
 use App\Http\Forms\ResourceForm;
+use App\Http\Livewire\CreatorComponent;
+use App\Http\Livewire\Support\Form\Reinitable;
 use App\Http\Requests\CreateProjectRequest;
 use Illuminate\Support\Arr;
 use Livewire\Component;
 
-class Add extends Component
+class Add extends CreatorComponent implements Reinitable
 {
     public ?string $name = null;
     public ?string $client_id = null;
@@ -19,7 +21,7 @@ class Add extends Component
 
     public function mount(?string $client_id = null)
     {
-       $this->client_id = $client_id;
+        $this->client_id = $client_id;
     }
 
     public function render()
@@ -30,7 +32,7 @@ class Add extends Component
         return view('livewire.projects.add', compact('selectClients', 'selectResources'));
     }
 
-    public function add()
+    public function create()
     {
         $rules     = ( new CreateProjectRequest() )->rules();
         $validated = $this->validate($rules);
@@ -52,13 +54,18 @@ class Add extends Component
     public function reinit(?string $field = null)
     {
         if ( empty($field) ) {
-            $this->name      = null;
-            $this->client_id = null;
-            $this->lead      = null;
-            $this->manager   = null;
+            $this->reinitAll();
         }
         else {
             $this->$field = null;
         }
+    }
+
+    public function reinitAll()
+    {
+        $this->name      = null;
+        $this->client_id = null;
+        $this->lead      = null;
+        $this->manager   = null;
     }
 }

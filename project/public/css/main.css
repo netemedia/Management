@@ -28,6 +28,33 @@
   padding-left: 1rem;
   padding-right: 1rem;
 }
+
+.input.\--select {
+  width: 100%;
+}
+
+.reinit {
+  color: #38b2ac;
+  color: #f7fafc;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  margin-right: 0.5rem;
+}
+
+.reinit .las {
+  color: #38b2ac;
+}
+
+.reinit.\--select {
+  margin-right: 1.5rem;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
 .button {
   cursor: pointer;
   color: #fff;
@@ -48,7 +75,15 @@
 .button.\--danger {
   background-color: #f56565;
 }
-.modal {
+.aside-title {
+  border-bottom-width: 2px;
+  border-style: solid;
+  border-color: #a0aec0;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #2d3748;
+  padding: 1rem;
+}.modal {
   position: fixed;
   display: flex;
   align-items: center;

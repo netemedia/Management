@@ -3,12 +3,11 @@
 namespace App\Http\Livewire\Clients;
 
 use App\Client;
-use App\Http\Livewire\Support\Creator;
+use App\Http\Livewire\CreatorComponent;
 use App\Http\Livewire\Support\Form\Reinitable;
 use App\Http\Requests\CreateClientRequest;
-use Livewire\Component;
 
-class Add extends Component implements Creator, Reinitable
+class Add extends CreatorComponent implements Reinitable
 {
     public ?string $name = null;
 
