@@ -21,11 +21,11 @@
     <table class="w-full table-auto">
       <thead class="font-semibold text-gray-700">
       <tr>
-        <th class="p-4 text-left w-16">État</th>
-        <th class="p-4 text-left w-16">Estimation</th>
-        <th class="p-4 text-left">Sujet</th>
-        <th class="p-4 text-left w-48">Resource</th>
-        <th class="p-4 text-left w-48">Date</th>
+        <td class="p-4 text-left w-16">État</td>
+        <td class="p-4 text-left w-16">Estimation</td>
+        <td class="p-4 text-left">Sujet</td>
+        <td class="p-4 text-left w-48">Resource</td>
+        <td class="p-4 text-left w-48">Date</td>
       </tr>
       </thead>
       <tbody class="border-t-2 border-solid border-gray-500">

@@ -1,7 +1,7 @@
 <table class="w-full table-auto">
   <thead class="font-semibold text-gray-700">
   <tr>
-    <th class="p-4 text-left cursor-pointer" wire:click="order('name')">
+    <td class="p-4 text-left cursor-pointer" wire:click="order('name')">
       @if('name' !== $order)
         <i aria-hidden="true" class="las la-caret-right"></i>
       @elseif('ASC' === $direction)
@@ -10,8 +10,8 @@
         <i aria-hidden="true" class="las la-caret-down"></i>
       @endif
       Nom
-    </th>
-    <th class="p-4 text-left cursor-pointer" wire:click="order('tasks_count')">
+    </td>
+    <td class="p-4 text-left cursor-pointer" wire:click="order('tasks_count')">
       @if('tasks_count' !== $order)
         <i aria-hidden="true" class="las la-caret-right"></i>
       @elseif('ASC' === $direction)
@@ -20,17 +20,17 @@
         <i aria-hidden="true" class="las la-caret-down"></i>
       @endif
       Tickets
-    </th>
-    <th class="p-4 text-left">
+    </td>
+    <td class="p-4 text-left">
       Client
-    </th>
-    <th class="p-4 text-left">
+    </td>
+    <td class="p-4 text-left">
       Lead
-    </th>
-    <th class="p-4 text-left">
+    </td>
+    <td class="p-4 text-left">
       Manager
-    </th>
-    <th class="p-4 text-left">Actions</th>
+    </td>
+    <td class="p-4 text-left">Actions</td>
   </tr>
   </thead>
   <tbody class="border-t-2 border-solid border-gray-500">

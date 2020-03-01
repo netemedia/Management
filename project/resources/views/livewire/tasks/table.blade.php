@@ -1,12 +1,12 @@
 <table class="w-full table-auto">
   <thead class="font-semibold text-gray-700">
   <tr>
-    <th class="p-4 text-left lg:w-16">État</th>
-    <th class="p-4 text-left lg:w-16">~</th>
-    <th class="p-4 text-left">Sujet</th>
-    <th class="p-4 text-left lg:w-48">Resource</th>
-    <th class="p-4 text-left lg:w-48">Date</th>
-    <th class="p-4 text-left">Actions</th>
+    <td class="p-4 text-left lg:w-16">État</td>
+    <td class="p-4 text-left lg:w-16">~</td>
+    <td class="p-4 text-left">Sujet</td>
+    <td class="p-4 text-left lg:w-48">Resource</td>
+    <td class="p-4 text-left lg:w-48">Date</td>
+    <td class="p-4 text-left">Actions</td>
   </tr>
   </thead>
   <tbody class="border-t-2 border-solid border-gray-500">
