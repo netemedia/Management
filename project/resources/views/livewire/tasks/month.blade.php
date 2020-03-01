@@ -3,13 +3,13 @@
 
   <div class="absolute right-0 top-0 pt-2 pr-2">
         <span class="cursor-pointer" wire:click="previousMonth">
-          <i class="las la-angle-left"></i>
+          <i aria-hidden="true" class="las la-angle-left"></i>
         </span>
     <span class="cursor-pointer" wire:click="resetMonth">
-          <i class="las la-undo-alt"></i>
+          <i aria-hidden="true" class="las la-undo-alt"></i>
         </span>
     <span class="cursor-pointer" wire:click="nextMonth">
-          <i class="las la-angle-right"></i>
+          <i aria-hidden="true" class="las la-angle-right"></i>
         </span>
   </div>
 

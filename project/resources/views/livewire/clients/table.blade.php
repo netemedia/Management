@@ -3,31 +3,31 @@
   <tr>
     <th class="p-4 w-64 text-left cursor-pointer" wire:click="order('name')">
       @if('name' !== $order)
-        <i class="las la-caret-right"></i>
+        <i aria-hidden="true" class="las la-caret-right"></i>
       @elseif('ASC' === $direction)
-        <i class="las la-caret-up"></i>
+        <i aria-hidden="true" class="las la-caret-up"></i>
       @else
-        <i class="las la-caret-down"></i>
+        <i aria-hidden="true" class="las la-caret-down"></i>
       @endif
       Nom
     </th>
     <th class="p-4 text-left cursor-pointer hidden md:table-cell" wire:click="order('projects_count')">
       @if('projects_count' !== $order)
-        <i class="las la-caret-right"></i>
+        <i aria-hidden="true" class="las la-caret-right"></i>
       @elseif('ASC' === $direction)
-        <i class="las la-caret-up"></i>
+        <i aria-hidden="true" class="las la-caret-up"></i>
       @else
-        <i class="las la-caret-down"></i>
+        <i aria-hidden="true" class="las la-caret-down"></i>
       @endif
       Projets
     </th>
     <th class="p-4 text-left cursor-pointer hidden md:table-cell" wire:click="order('tasks_count')">
       @if('tasks_count' !== $order)
-        <i class="las la-caret-right"></i>
+        <i aria-hidden="true" class="las la-caret-right"></i>
       @elseif('ASC' === $direction)
-        <i class="las la-caret-up"></i>
+        <i aria-hidden="true" class="las la-caret-up"></i>
       @else
-        <i class="las la-caret-down"></i>
+        <i aria-hidden="true" class="las la-caret-down"></i>
       @endif
       Tickets
     </th>
@@ -50,15 +50,15 @@
       </td>
       <td class="p-4 flex">
           <span class="go" wire:click="edit('{{$client->id}}')">
-            <i class="lar la-edit"></i>
+            <i aria-hidden="true" class="lar la-edit"></i>
           </span>
         <div class="w-4"></div>
         <span class="go" wire:click="addProject('{{$client->id}}')">
-            <i class="las la-plus-square"></i>
+            <i aria-hidden="true" class="las la-plus-square"></i>
           </span>
         <div class="w-4"></div>
         <span class="go text-red-500" wire:click="delete('{{$client->id}}')">
-            <i class="las la-trash"></i>
+            <i aria-hidden="true" class="las la-trash"></i>
           </span>
       </td>
     </tr>

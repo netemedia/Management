@@ -23,11 +23,11 @@
       <td class="p-4 text-sm">{{ $task->moment }}</td>
       <td class="p-4 flex">
           <span class="go" wire:click="edit('{{$task->id}}')">
-            <i class="lar la-edit"></i>
+            <i aria-hidden="true" class="lar la-edit"></i>
           </span>
         <div class="w-4"></div>
         <span class="go text-red-500" wire:click="delete('{{$task->id}}')">
-            <i class="las la-trash"></i>
+            <i aria-hidden="true" class="las la-trash"></i>
           </span>
       </td>
     </tr>

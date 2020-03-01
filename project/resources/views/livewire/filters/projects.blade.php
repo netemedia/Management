@@ -16,7 +16,7 @@
                wire:model="search">
         <span class="text-teal-500 text-gray-100 cursor-pointer absolute right-0 mr-2"
               wire:click="reinit">
-          <i class="las la-backspace"></i>
+          <i aria-hidden="true" class="las la-backspace"></i>
         </span>
       </div>
     </div>

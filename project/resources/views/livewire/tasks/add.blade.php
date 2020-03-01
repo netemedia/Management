@@ -16,7 +16,7 @@
                wire:model="title">
         <span class="text-teal-500 text-gray-100 cursor-pointer absolute right-0 mr-2"
               wire:click="reinit('title')">
-            <i class="las la-backspace"></i>
+            <i aria-hidden="true" class="las la-backspace"></i>
           </span>
       </div>
     </div>
@@ -33,7 +33,7 @@
                wire:model="url">
         <span class="text-teal-500 text-gray-100 cursor-pointer absolute right-0 mr-2"
               wire:click="reinit('url')">
-            <i class="las la-backspace"></i>
+            <i aria-hidden="true" class="las la-backspace"></i>
           </span>
       </div>
     </div>
@@ -50,7 +50,7 @@
                wire:model="estimation">
         <span class="text-teal-500 text-gray-100 cursor-pointer absolute right-0 mr-2"
               wire:click="reinit('estimation')">
-            <i class="las la-backspace"></i>
+            <i aria-hidden="true" class="las la-backspace"></i>
           </span>
       </div>
     </div>
@@ -83,7 +83,7 @@
         </select>
         <span class="text-teal-500 text-gray-100 cursor-pointer absolute right-0 mr-6"
               wire:click="reinit('resource_id')">
-            <i class="las la-backspace"></i>
+            <i aria-hidden="true" class="las la-backspace"></i>
           </span>
       </div>
     </div>

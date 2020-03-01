@@ -16,7 +16,7 @@
                wire:model="name">
         <span class="text-teal-500 text-gray-100 cursor-pointer absolute right-0 mr-2"
               wire:click="reinit('name')">
-            <i class="las la-backspace"></i>
+            <i aria-hidden="true" class="las la-backspace"></i>
           </span>
       </div>
     </div>
@@ -36,7 +36,7 @@
         </select>
         <span class="text-teal-500 text-gray-100 cursor-pointer absolute right-0 mr-6"
               wire:click="reinit('client_id')">
-            <i class="las la-backspace"></i>
+            <i aria-hidden="true" class="las la-backspace"></i>
           </span>
       </div>
     </div>
@@ -56,7 +56,7 @@
         </select>
         <span class="text-teal-500 text-gray-100 cursor-pointer absolute right-0 mr-6"
               wire:click="reinit('lead')">
-            <i class="las la-backspace"></i>
+            <i aria-hidden="true" class="las la-backspace"></i>
           </span>
       </div>
     </div>
@@ -76,7 +76,7 @@
         </select>
         <span class="text-teal-500 text-gray-100 cursor-pointer absolute right-0 mr-6"
               wire:click="reinit('manager')">
-            <i class="las la-backspace"></i>
+            <i aria-hidden="true" class="las la-backspace"></i>
           </span>
       </div>
     </div>
