@@ -1,40 +1,22 @@
-<table class="w-full table-auto">
-  <thead class="font-semibold text-gray-700">
+<table class="table">
+  <thead class="table-head">
   <tr>
-    <td class="p-4 w-64 text-left cursor-pointer" wire:click="order('name')">
-      @if('name' !== $order)
-        <i aria-hidden="true" class="las la-caret-right"></i>
-      @elseif('ASC' === $direction)
-        <i aria-hidden="true" class="las la-caret-up"></i>
-      @else
-        <i aria-hidden="true" class="las la-caret-down"></i>
-      @endif
+    <th scope="col" class="table-title --order w-64" wire:click="order('name')">
+      @include('components/atoms/order', ['order_field' => 'name'])
       Nom
-    </td>
-    <td class="p-4 text-left cursor-pointer hidden md:table-cell" wire:click="order('projects_count')">
-      @if('projects_count' !== $order)
-        <i aria-hidden="true" class="las la-caret-right"></i>
-      @elseif('ASC' === $direction)
-        <i aria-hidden="true" class="las la-caret-up"></i>
-      @else
-        <i aria-hidden="true" class="las la-caret-down"></i>
-      @endif
+    </th>
+    <td class="table-title --order hidden md:table-cell" wire:click="order('projects_count')">
+      @include('components/atoms/order', ['order_field' => 'projects_count'])
       Projets
     </td>
-    <td class="p-4 text-left cursor-pointer hidden md:table-cell" wire:click="order('tasks_count')">
-      @if('tasks_count' !== $order)
-        <i aria-hidden="true" class="las la-caret-right"></i>
-      @elseif('ASC' === $direction)
-        <i aria-hidden="true" class="las la-caret-up"></i>
-      @else
-        <i aria-hidden="true" class="las la-caret-down"></i>
-      @endif
+    <td class="table-title --order hidden md:table-cell" wire:click="order('tasks_count')">
+      @include('components/atoms/order', ['order_field' => 'tasks_count'])
       Tickets
     </td>
-    <td class="p-4 text-left">Actions</td>
+    <td class="table-title">Actions</td>
   </tr>
   </thead>
-  <tbody class="border-t-2 border-solid border-gray-500">
+  <tbody class="table-body">
   @foreach($clients as $client)
     <tr>
       <td class="p-4">

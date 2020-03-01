@@ -1,43 +1,25 @@
-<table class="w-full table-auto">
-  <thead class="font-semibold text-gray-700">
+<table class="table">
+  <thead class="table-head">
   <tr>
-    <td class="p-4 text-left cursor-pointer" wire:click="order('name')">
-      @if('name' !== $order)
-        <i aria-hidden="true" class="las la-caret-right"></i>
-      @elseif('ASC' === $direction)
-        <i aria-hidden="true" class="las la-caret-up"></i>
-      @else
-        <i aria-hidden="true" class="las la-caret-down"></i>
-      @endif
+    <th scope="col" class="table-title --order" wire:click="order('name')">
+      @include('components/atoms/order', ['order_field' => 'name'])
       Nom
-    </td>
-    <td class="p-4 text-left cursor-pointer" wire:click="order('tasks_count')">
-      @if('tasks_count' !== $order)
-        <i aria-hidden="true" class="las la-caret-right"></i>
-      @elseif('ASC' === $direction)
-        <i aria-hidden="true" class="las la-caret-up"></i>
-      @else
-        <i aria-hidden="true" class="las la-caret-down"></i>
-      @endif
+    </th>
+    <td class="table-title --order" wire:click="order('tasks_count')">
+      @include('components/atoms/order', ['order_field' => 'tasks_count'])
       Tickets
     </td>
-    <td class="p-4 text-left">
-      Client
-    </td>
-    <td class="p-4 text-left">
-      Lead
-    </td>
-    <td class="p-4 text-left">
-      Manager
-    </td>
-    <td class="p-4 text-left">Actions</td>
+    <td class="table-title">Client</td>
+    <td class="table-title">Lead</td>
+    <td class="table-title">Manager</td>
+    <td class="table-title">Actions</td>
   </tr>
   </thead>
-  <tbody class="border-t-2 border-solid border-gray-500">
+  <tbody class="table-body">
   @foreach($projects as $project)
     <tr>
       <td class="p-4">
-        <a class="text-blue-500 no-underline" href="{{ $project->link }}">
+        <a class="go" href="{{ $project->link }}">
           {{ $project->name }}
         </a>
       </td>
@@ -45,8 +27,8 @@
         {{ $project->tasks_count }}
         @if($counter->tasks > 0)
           <span class="text-gray-500">
-              ({{ round( ($project->tasks_count / $counter->tasks) * 100, 2 )}}%)
-            </span>
+            ({{ round( ($project->tasks_count / $counter->tasks) * 100, 2 )}}%)
+          </span>
         @endif
       </td>
       <td class="p-4 text-sm">
