@@ -45,6 +45,14 @@ class Table extends Component
         $this->emit('DeleteTask', $id, $this->project_id);
     }
 
+    public function eraseDay(string $id)
+    {
+        $task = Task::find($id);
+        $task->day = null;
+        $task->save();
+        $this->emit('TaskUpdated');
+    }
+
     public function render()
     {
         $tasks = $this->initTasks();
