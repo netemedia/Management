@@ -32,21 +32,13 @@
         @endif
       </td>
       <td class="p-4 text-sm">
-        {{ $project->client->name }}
+        @include('components/atoms/projects/client')
       </td>
       <td class="p-4 text-sm">
-        @if($lead = $project->getPosition('lead'))
-          {{ $lead->name }}
-        @else
-          -
-        @endif
+        @include('components/atoms/projects/resource', ['position' => 'lead'])
       </td>
       <td class="p-4 text-sm">
-        @if($manager = $project->getPosition('manager'))
-          {{ $manager->name }}
-        @else
-          -
-        @endif
+        @include('components/atoms/projects/resource', ['position' => 'manager'])
       </td>
       <td class="p-4 flex">
           <span class="go" wire:click="edit('{{$project->id}}')">

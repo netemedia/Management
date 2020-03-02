@@ -46,7 +46,9 @@
               {{ $task->title }}
             @endif
           </td>
-          <td class="p-4 text-sm">@if($task->resource) {{ $task->resource->name }} @else - @endif</td>
+          <td class="p-4 text-sm">
+            @include('components/atoms/tasks/resource')
+          </td>
           <td class="p-4 text-sm">{{ $task->moment }}</td>
         </tr>
       @endforeach
