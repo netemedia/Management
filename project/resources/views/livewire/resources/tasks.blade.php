@@ -20,7 +20,9 @@
         @include('components/atoms/tasks/subject')
       </td>
       <td class="p-4 text-sm">@if($task->resource) {{ $task->resource->name }} @else - @endif</td>
-      <td class="p-4 text-sm">{{ $task->moment }}</td>
+      <td class="p-4 text-sm">
+        @include('components/atoms/tasks/day')
+      </td>
       <td class="p-4 flex">
           <span class="go" wire:click="edit('{{$task->id}}')">
             <i aria-hidden="true" class="lar la-edit"></i>

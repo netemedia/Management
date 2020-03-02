@@ -69,4 +69,13 @@ class Tasks extends Component
         $task->save();
         $this->emit('StatusChanged');
     }
+
+    public function eraseDay(string $id)
+    {
+        $task = Task::find($id);
+        $task->day = null;
+        $task->save();
+        $this->emit('TaskUpdated');
+    }
+
 }
