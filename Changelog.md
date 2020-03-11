@@ -28,10 +28,6 @@ We follow Semantic Versioning.
 
 # Unreleased
 
-Nothing for the moment.
-
-# v1.2.3
-
 - Changelog updated
 
 # v1.2.2
