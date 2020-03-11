@@ -26,7 +26,7 @@ class Add extends CreatorComponent implements Reinitable
         $this->reinit();
     }
 
-    public function reinit(?string $field)
+    public function reinit(?string $field = null)
     {
         if ( $field ) {
             $this->$field = null;
