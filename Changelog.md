@@ -30,6 +30,34 @@ We follow Semantic Versioning.
 
 Nothing for the moment.
 
+# v1.2.3
+
+- Changelog updated
+
+# v1.2.2
+
+- Server Changed
+    - `Changed` Envoy updated to suit new server
+
+# v1.2.2
+
+- Server Changed
+    - `Changed` Envoy updated to suit new server
+
+# v1.2.1
+
+- Resource Page
+    - `Added` Ability to add task on a resource
+
+# v1.2.0
+
+- New Layouts
+    - Tasks tables
+    - Recent tasks table
+    - Dashboard layout
+- Resource Page
+    - `Added` Atom components
+    
 # v1.1.0
 
 - Project Page
