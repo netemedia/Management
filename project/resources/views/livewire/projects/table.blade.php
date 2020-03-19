@@ -9,7 +9,6 @@
       @include('components/atoms/order', ['order_field' => 'tasks_count'])
       Tickets
     </td>
-    <td class="table-title">Client</td>
     <td class="table-title">Lead</td>
     <td class="table-title">Manager</td>
     <td class="table-title">Actions</td>
@@ -19,6 +18,9 @@
   @foreach($projects as $project)
     <tr>
       <td class="p-4">
+        <a class="go" href="{{ $project->client->link }}">
+          {{ $project->client->name}}
+        </a> |
         <a class="go" href="{{ $project->link }}">
           {{ Str::afterLast($project->name, "| ") }}
           @if($project->innovation)<i aria-hidden="true" class="las la-bolt"></i>@endif
@@ -31,9 +33,6 @@
             ({{ round( ($project->tasks_count / $counter->tasks) * 100, 2 )}}%)
           </span>
         @endif
-      </td>
-      <td class="p-4 text-sm">
-        @include('components/atoms/projects/client')
       </td>
       <td class="p-4 text-sm">
         @include('components/atoms/projects/resource', ['position' => 'lead'])

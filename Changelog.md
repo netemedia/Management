@@ -30,6 +30,11 @@ We follow Semantic Versioning.
 
 # v1.3.0
 
+- `Changed` auto append client name before project name
+- `Changed` get client name and link before project name on projects table
+
+# v1.3.0
+
 - `Fixed` users can now access project and client from tasks tables
 - `Added` ability to mark project as 'innovation'
 - `Added` ability to filter projects by innovation
