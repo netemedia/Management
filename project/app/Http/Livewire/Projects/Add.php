@@ -41,6 +41,7 @@ class Add extends CreatorComponent implements Reinitable
         $resources = Arr::only($validated, [ 'lead', 'manager' ]);
 
         $client = Client::find($validated['client_id']);
+        $maker['name'] = "{$client->name} | {$maker['name']}";
 
         $project = $client->projects()->create($maker);
 
