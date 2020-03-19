@@ -9,11 +9,13 @@ final class Counter
 {
     public int $tasks;
     public int $projects;
+    public int $pending_tasks;
     private static $instance = null;
 
     private function __construct()
     {
-        $this->tasks    = Task::count();
+        $this->tasks = Task::count();
+        $this->pending_tasks = Task::where('done', true)->count();
         $this->projects = Project::count();
     }
 
