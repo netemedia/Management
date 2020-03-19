@@ -58,6 +58,21 @@ class Project extends Model implements LinkInterface
         return $this->getPosition('manager') ? $this->getPosition('manager')->id : null;
     }
 
+    public function getDoneTasksCountAttribute() : int
+    {
+        return $this->tasks->where('done', true)->count();
+    }
+
+    public function getIsCompleteAttribute() : bool
+    {
+        return $this->tasks_count === $this->done_tasks_count;
+    }
+
+    public function getCompletedHoursAttribute() : int
+    {
+        return $this->tasks->where('done', true)->sum('estimation');
+    }
+
     /**
      * @param string $position
      *
