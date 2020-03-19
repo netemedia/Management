@@ -21,6 +21,7 @@
       <td class="p-4">
         <a class="go" href="{{ $project->link }}">
           {{ $project->name }}
+          @if($project->innovation)<i aria-hidden="true" class="las la-bolt"></i>@endif
         </a>
       </td>
       <td class="p-4 text-sm">

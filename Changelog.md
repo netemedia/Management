@@ -24,14 +24,14 @@ We follow Semantic Versioning.
 # Table of contents
 
 - [Unreleased](#unreleased)
+- [v1.2.0](#v1.2.0)
 - [v1.1.0](#v1.1.0)
 
 # Unreleased
 
-Nothing for the moment.
-
-# v1.2.3
-
+- `Fixed` users can now access project and client from tasks tables
+- `Added` ability to mark project as 'innovation'
+- `Added` ability to filter projects by innovation
 - Changelog updated
 
 # v1.2.2

@@ -8,6 +8,7 @@ class Projects extends Component
 {
     public ?string $search = '';
     public ?string $client_id = null;
+    public bool $innovations = false;
 
     public function mount(?string $client_id = null)
     {
@@ -21,7 +22,16 @@ class Projects extends Component
 
     public function search()
     {
-        $this->emit('SearchProject', $this->search, $this->client_id);
+        $this->emit('SearchProject', $this->searchData());
+    }
+
+    protected function searchData() : array
+    {
+        return [
+            'search'      => $this->search,
+            'innovations' => $this->innovations,
+            'client_id'   => $this->client_id,
+        ];
     }
 
     public function reinit()
@@ -30,4 +40,9 @@ class Projects extends Component
         $this->emit('SearchProject', null, $this->client_id);
     }
 
+    public function toggleDisplayInnovations()
+    {
+        $this->innovations = ! $this->innovations;
+        $this->emit('SearchProject', $this->searchData());
+    }
 }

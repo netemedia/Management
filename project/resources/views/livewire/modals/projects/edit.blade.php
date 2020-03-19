@@ -28,7 +28,6 @@
               </span>
             </div>
           </div>
-
           <div class="h-4"></div>
           <div class="flex flex-col">
             <label for="edit_lead">
@@ -70,7 +69,16 @@
             </div>
           </div>
           <div class="h-4"></div>
-
+          <div class="flex items-center">
+            <input type="checkbox" id="edit_innovation" name="edit_innovation"
+                   class="mr-2"
+                   wire:model="innovation"
+                   @if($oldInnovation)checked="checked"@endif>
+            <label class="cursor-pointer" for="edit_innovation">
+              C'est une innovation
+            </label>
+          </div>
+          <div class="h-4"></div>
           <div class="flex justify-between -mx-2">
           <span class="cursor-pointer text-white px-2 py-1 bg-teal-500 rounded-sm mx-2"
                 wire:click="toggle">
