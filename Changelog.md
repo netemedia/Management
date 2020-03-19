@@ -28,6 +28,11 @@ We follow Semantic Versioning.
 - [v1.2.0](#v1.2.0)
 - [v1.1.0](#v1.1.0)
 
+# v1.3.2
+
+- `Changed` projects display completed time on projects table
+- `Changed` projects display completed tasks / all tasks on projects table
+
 # v1.3.1
 
 - `Changed` auto append client name before project name
