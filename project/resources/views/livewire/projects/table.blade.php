@@ -20,7 +20,7 @@
     <tr>
       <td class="p-4">
         <a class="go" href="{{ $project->link }}">
-          {{ $project->name }}
+          {{ Str::afterLast($project->name, "| ") }}
           @if($project->innovation)<i aria-hidden="true" class="las la-bolt"></i>@endif
         </a>
       </td>
