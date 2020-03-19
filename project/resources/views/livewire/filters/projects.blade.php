@@ -21,13 +21,14 @@
       </div>
     </div>
     <div class="h-4"></div>
-    <div class="flex justify-end">
-      <span class="px-2 bg-blue-500 text-gray-100 rounded-sm cursor-pointer"
-            wire:click="search">
-        Trouver
-      </span>
+    <div class="flex items-center">
+      <input type="checkbox" id="innovations" name="innovations"
+             class="mr-2"
+             @if($innovations)checked="checked"@endif>
+      <label class="cursor-pointer" for="innovations" wire:click="toggleDisplayInnovations">
+        Afficher les innovations <i aria-hidden="true" class="las la-bolt"></i>
+      </label>
     </div>
-
   </div>
 
 </div>

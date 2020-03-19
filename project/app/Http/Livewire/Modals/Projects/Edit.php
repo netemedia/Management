@@ -16,9 +16,11 @@ class Edit extends Component
     public string $client_id = '';
     public ?string $lead = null;
     public ?string $manager = null;
+    public bool $innovation = false;
     public string $oldName = '';
     public ?string $oldLead = null;
     public ?string $oldManager = null;
+    public bool $oldInnovation = false;
     public ?string $projectId = null;
     protected $listeners = [
         'EditProject' => 'toggle',
@@ -33,24 +35,26 @@ class Edit extends Component
 
     public function toggle(?string $id = null)
     {
-        $this->opened     = ! $this->opened;
-        $this->projectId  = $id;
-        $project          = Project::find($this->projectId);
-        $this->name       = $project ? $project->name : '';
-        $this->lead       = $project ? $project->lead : '';
-        $this->manager    = $project ? $project->manager : '';
-        $this->oldName    = $project ? $project->name : '';
-        $this->oldLead    = $project ? $project->lead : '';
+        $this->opened = ! $this->opened;
+        $this->projectId = $id;
+        $project = Project::find($this->projectId);
+        $this->name = $project ? $project->name : '';
+        $this->lead = $project ? $project->lead : '';
+        $this->manager = $project ? $project->manager : '';
+        $this->innovation = $project ? $project->innovation : false;
+        $this->oldName = $project ? $project->name : '';
+        $this->oldLead = $project ? $project->lead : '';
         $this->oldManager = $project ? $project->manager : '';
+        $this->oldInnovation = $project ? $project->innovation : false;
     }
 
     public function update(string $id)
     {
-        $project   = Project::find($id);
-        $rules     = ( new UpdateProjectRequest() )->rules();
+        $project = Project::find($id);
+        $rules = ( new UpdateProjectRequest() )->rules();
         $validated = $this->validate($rules);
         $resources = Arr::only($validated, [ 'lead', 'manager' ]);
-        $project->update(Arr::only($validated, [ 'name' ]));
+        $project->update(Arr::only($validated, [ 'name', 'innovation' ]));
 
         $behavior = new ProjectResourceBehavior($project);
         $behavior->assignResources($resources);
