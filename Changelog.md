@@ -28,7 +28,7 @@ We follow Semantic Versioning.
 - [v1.2.0](#v1.2.0)
 - [v1.1.0](#v1.1.0)
 
-# v1.3.0
+# v1.3.1
 
 - `Changed` auto append client name before project name
 - `Changed` get client name and link before project name on projects table
