@@ -15,6 +15,7 @@ class Table extends Component
     public string $order = 'name';
     public string $direction = 'ASC';
     public ?string $client_id = null;
+    public bool $innovations = false;
     protected $listeners = [
         'ProjectUpdated' => 'render',
         'ProjectDeleted' => 'render',
@@ -31,7 +32,7 @@ class Table extends Component
 
     public function render()
     {
-        $counter  = Counter::getInstance();
+        $counter = Counter::getInstance();
         $projects = $this->initProjects();
 
         $data = compact('projects', 'counter');
@@ -44,15 +45,17 @@ class Table extends Component
         if ( empty($this->client_id) ) {
             return $this->projects ?? Project::orderBy($this->order, $this->direction)
                                              ->where('name', 'LIKE', "%$this->search%")
+                                             ->when($this->innovations, fn($query) => $query->where('innovation', true))
                                              ->paginate(25);
         }
 
         $client = Client::find($this->client_id);
 
         return $this->projects ?? $client->projects()
-                      ->orderBy($this->order, $this->direction)
-                      ->where('name', 'LIKE', "%$this->search%")
-                      ->paginate(25);
+                                         ->orderBy($this->order, $this->direction)
+                                         ->where('name', 'LIKE', "%$this->search%")
+                                         ->when($this->innovations, fn($query) => $query->where('innovation', true))
+                                         ->paginate(25);
     }
 
     public function edit(string $id, ?string $client_id = null)
@@ -65,10 +68,11 @@ class Table extends Component
         $this->emit('DeleteProject', $id, $this->client_id);
     }
 
-    public function search(?string $search = null, ?string $client_id = null)
+    public function search(array $data)
     {
-        $this->search = $search;
-        $this->client_id = $client_id;
+        $this->search = $data['search'];
+        $this->client_id = $data['client_id'];
+        $this->innovations = $data['innovations'];
     }
 
     public function addTask(string $id)

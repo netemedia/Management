@@ -36,15 +36,7 @@
           </td>
           <td class="p-4 text-sm">@if($task->estimation) {{ $task->estimation }}h @else - @endif</td>
           <td class="p-4 text-sm">
-            {{ $task->project->client->name }} | {{ $task->project->name }}
-            <br>
-            @if($task->url)
-              <a class="go" href="{{ $task->url }}" target="_blank">
-                {{ $task->title }}
-              </a>
-            @else
-              {{ $task->title }}
-            @endif
+            @include('components/atoms/tasks/subject')
           </td>
           <td class="p-4 text-sm">
             @include('components/atoms/tasks/resource')

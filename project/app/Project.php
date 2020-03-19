@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model implements LinkInterface
 {
     use Notable, UsesUuid;
-    protected $fillable = [ 'name' ];
+    protected $fillable = [ 'name', 'innovation' ];
     protected $withCount = [ 'tasks' ];
 
     /**

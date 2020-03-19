@@ -14,9 +14,10 @@ class UpdateProjectRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'      => 'required|min:3',
-            'lead'      => 'nullable|exists:resources,id',
-            'manager'   => 'nullable|exists:resources,id',
+            'name'       => 'required|min:3',
+            'innovation' => 'nullable|boolean',
+            'lead'       => 'nullable|exists:resources,id',
+            'manager'    => 'nullable|exists:resources,id',
         ];
     }
 }
