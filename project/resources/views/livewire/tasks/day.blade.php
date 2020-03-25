@@ -10,7 +10,7 @@
     <div class="flex justify-end">
       <p class="text-gray-700">
           <span class="text-lg">
-            {{ $properties->getDone() }}
+            {{ $properties->getDone() }}h
           </span>
       </p>
     </div>
@@ -25,7 +25,7 @@
     </div>
   </div>
   <div class="flex justify-between bg-gradient-{{ $properties->getColor() }} px-4 py-2">
-    <p class="text-sm text-gray-100">Total: {{ $properties->getAll() }}</p>
+    <p class="text-sm text-gray-100">Total: {{ $properties->getAll() }}h</p>
     @if(100.0 === $properties->getProgression())
       <p class="text-sm text-gray-200">Journée terminée :)</p>
     @endif

@@ -13,7 +13,7 @@
       </p>
       <p class="text-gray-800">
           <span class="text-lg">
-            {{ $done }}
+            {{ $done }} tickets | {{ $hours }} heures
           </span>
       </p>
     </div>

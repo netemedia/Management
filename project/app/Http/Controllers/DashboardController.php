@@ -11,9 +11,19 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
+    /**
+     * @param \Illuminate\Http\Request $request
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @throws \Exception
+     */
     public function __invoke(Request $request)
     {
-        return view('dashboard');
+        $carbon = new Carbon($request->get('date', null));
+        $date = $carbon->format('Y-m-d');
+        $next   = $carbon->endOfWeek()->format('Y-m-d');
+
+        return view('dashboard', compact('date', 'next'));
     }
 
     /**

@@ -37,4 +37,27 @@ class Client extends Model implements LinkInterface
     {
         return "/clients/{$this->id}";
     }
+
+    public function getIsCompleteAttribute() : bool
+    {
+        return $this->tasks_count === $this->done_tasks_count;
+    }
+
+    public function getCompletedHoursAttribute() : int
+    {
+        return $this->tasks->where('done', true)->sum('estimation');
+    }
+
+    public function getHoursAttribute() : int
+    {
+        return $this->tasks->sum('estimation');
+    }
+
+    public function getPercentCompleteAttribute() : ?float
+    {
+        if($this->completed_hours === 0 ) {
+            return null;
+        }
+        return round($this->completed_hours / $this->hours * 100, 2);
+    }
 }
