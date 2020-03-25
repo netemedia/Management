@@ -56,8 +56,9 @@ class Table extends Component
     public function render()
     {
         $tasks = $this->initTasks();
+        $hours = $tasks->sum('estimation');
 
-        return view('livewire.tasks.table', compact('tasks'));
+        return view('livewire.tasks.table', compact('tasks', 'hours'));
     }
 
     public function changeStatus(string $id)

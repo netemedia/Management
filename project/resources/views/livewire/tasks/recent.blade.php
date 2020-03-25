@@ -5,7 +5,7 @@
 
     <div class="px-4 flex justify-between">
       <p class="text-base font-semibold text-gray-800">
-        {{ $title }}
+        {{ $title }} | {{ $hours }} heures
       </p>
       <div class="text-sm">
         <input type="checkbox" id="done" name="done"

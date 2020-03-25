@@ -16,15 +16,19 @@ class Week extends Component
         $this->title = $title;
     }
 
+    /**
+     * @return \App\Http\Livewire\Properties\TasksProperty
+     * @throws \Exception
+     */
     public function getTasksProperty() : TasksProperty
     {
         $request = app('request');
-        $carbon  = new Carbon($request->get('date', null));
+        $carbon  = new Carbon($request->get('date'));
         $date    = $carbon->startOfWeek()->format('Y-m-d');
         $next    = $carbon->endOfWeek()->format('Y-m-d');
         $tasks   = Task::where('day', '>=', $date)->where('day', '<=', $next);
-        $all     = $tasks->count();
-        $done    = $tasks->where('done', true)->count();
+        $all     = $tasks->sum('estimation');
+        $done    = $tasks->where('done', true)->sum('estimation');
 
         return new TasksProperty($done, $all);
     }

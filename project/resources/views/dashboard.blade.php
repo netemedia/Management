@@ -20,65 +20,9 @@
   <section class="flex -mx-4">
 
     @livewire('tasks.month', 'Tickets du mois')
+    @livewire('tasks.day', Date::date($date))
+    @livewire('tasks.week', Date::date($date) . " | " . Date::date($next))
 
-    <div class="w-1/3 bg-white rounded shadow mx-4 overflow-hidden">
-      <div class="h-4"></div>
-
-      <div class="px-4">
-        <div>
-          <p class="text-base font-semibold text-gray-800">
-            Tickets terminés
-          </p>
-        </div>
-        <div class="flex justify-end">
-          <p class="text-gray-700">
-          <span class="text-lg">
-            35
-          </span>
-          </p>
-        </div>
-      </div>
-
-      <div class="h-4"></div>
-
-      <div>
-        <div class="w-full bg-gray-300 h-1 overflow-hidden">
-          <div class="bg-gradient-blues h-full" style="width: 12%;"></div>
-        </div>
-      </div>
-      <div class="bg-gradient-blues px-4 py-2">
-        <p class="text-sm text-gray-100">Total: 48</p>
-      </div>
-
-    </div>
-
-    <div class="w-1/3 bg-white rounded shadow mx-4 px-4">
-      <div class="h-4"></div>
-
-      <div>
-        <p class="text-base font-semibold text-gray-800">
-          Tickets terminés
-        </p>
-      </div>
-      <div class="flex justify-end">
-        <p class="text-gray-700">
-          <span class="text-lg">
-            35
-          </span>
-          <small class="text-xs text-gray-600">/ 48</small>
-        </p>
-      </div>
-
-      <div class="h-4"></div>
-
-      <div>
-        <div class="w-full rounded-sm bg-gray-300 h-2 overflow-hidden">
-          <div class="bg-orange-400 h-full" style="width: 73%;"></div>
-        </div>
-      </div>
-
-      <div class="h-4"></div>
-    </div>
   </section>
 
   <div class="h-8"></div>

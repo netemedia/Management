@@ -62,4 +62,23 @@ class Resource extends Model implements LinkInterface
     {
         return $this->tasks->where('done', true);
     }
+
+    public function getCompletedHoursAttribute() : int
+    {
+        return $this->tasks->where('done', true)->sum('estimation');
+    }
+
+    public function getHoursAttribute() : int
+    {
+        return $this->tasks->sum('estimation');
+    }
+
+    public function getPercentCompleteAttribute() : ?float
+    {
+        if($this->completed_hours === 0 ) {
+            return null;
+        }
+        return round($this->completed_hours / $this->hours * 100, 2);
+    }
+
 }
