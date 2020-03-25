@@ -39,9 +39,10 @@ class Recent extends Component
             $tasks = $tasks->where('done', false);
         }
 
+        $hours = $tasks->sum('estimation');
         $tasks = $tasks->paginate(10);
 
-        return view('livewire.tasks.recent', compact('tasks'));
+        return view('livewire.tasks.recent', compact('tasks', 'hours'));
     }
 
     public function paginationView()

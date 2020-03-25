@@ -9,9 +9,6 @@
       @include('components/atoms/order', ['order_field' => 'tasks_count'])
       Tickets
     </td>
-    <td class="table-title">
-      Temps
-    </td>
     <td class="table-title">Lead</td>
     <td class="table-title">Manager</td>
     <td class="table-title">Actions</td>
@@ -29,16 +26,8 @@
           @if($project->innovation)<i aria-hidden="true" class="las la-bolt"></i>@endif
         </a>
       </td>
-      <td class="p-4">
-        {{ $project->done_tasks_count }} / {{ $project->tasks_count }}
-        @if($project->is_complete)
-          <i aria-hidden="true" class="text-green-500 las la-check"></i>
-        @else
-          <i aria-hidden="true" class="text-orange-500 las la-code"></i>
-        @endif
-      </td>
       <td class="p-4 text-sm">
-        {{ $project->completed_hours }}h
+        @include('components/atoms/projects/tasks_count')
       </td>
       <td class="p-4 text-sm">
         @include('components/atoms/projects/resource', ['position' => 'lead'])

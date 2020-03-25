@@ -1,6 +1,10 @@
-{{ $resource->tasks_count }}
-@if($counter->tasks > 0)
-  <span class="text-gray-500">
-              ({{ round( ($resource->tasks_count / $counter->tasks) * 100, 2 )}}%)
-            </span>
+@if($resource->percent_complete > 0)
+  {{ $resource->completed_hours }}h / {{ $resource->hours }}h
+  @if($resource->percent_complete > 99)
+    <i aria-hidden="true" class="text-green-500 las la-check-square"></i>
+  @else
+    <span class="text-gray-500">
+      ({{ $resource->percent_complete }}%)
+    </span>
+  @endif
 @endif

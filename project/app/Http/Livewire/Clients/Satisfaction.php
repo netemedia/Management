@@ -16,7 +16,9 @@ class Satisfaction extends Component
 
     public function render()
     {
-        $all = Client::count();
+        $clients = Client::all();
+        $all = $clients->filter(fn($client) => $client->percent_complete > 99)->count();
+
         return view('livewire.clients.satisfaction', compact('all'));
     }
 }

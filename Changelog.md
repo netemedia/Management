@@ -28,6 +28,21 @@ We follow Semantic Versioning.
 - [v1.2.0](#v1.2.0)
 - [v1.1.0](#v1.1.0)
 
+# Unreleased
+
+# v1.3.3
+
+Hourly rates instead of numbers
+
+- `Changed` tasks small components now display hours completed/total instead of number of tasks
+- `Changed` yearly done tasks also display number of hours passed
+- `Added` Recent tasks table nos display total amount of time estimated to complete
+- `Changed` Tasks table now displays paginated tasks total hours
+- `Changed` Clients index table now displays completed/total hours
+- `Changed` Projects index table now displays completed/total hours
+- `Changed` Projects index table now displays completed/total hours
+- `Changed` Get satisfaction based on percent completed instead of all clients
+
 # v1.3.2
 
 - `Changed` projects display completed time on projects table

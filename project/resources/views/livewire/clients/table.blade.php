@@ -9,8 +9,7 @@
       @include('components/atoms/order', ['order_field' => 'projects_count'])
       Projets
     </td>
-    <td class="table-title --order hidden md:table-cell" wire:click="order('tasks_count')">
-      @include('components/atoms/order', ['order_field' => 'tasks_count'])
+    <td class="table-title --order hidden md:table-cell">
       Tickets
     </td>
     <td class="table-title">Actions</td>

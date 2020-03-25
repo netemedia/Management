@@ -15,16 +15,18 @@ class Year extends Component
 
     public function mount()
     {
-        $year        = Carbon::now()->year;
+        $year = Carbon::now()->year;
         $this->title = "Tickets traités | $year";
     }
 
     public function render()
     {
         $from = Carbon::now()->startOfYear();
-        $to   = Carbon::now()->endOfYear();
-        $done = Task::where('day', '>=', $from)->where('day', '<=', $to)->where('done', true)->count();
+        $to = Carbon::now()->endOfYear();
+        $tasks = Task::where('day', '>=', $from)->where('day', '<=', $to)->where('done', true);
+        $done = $tasks->count();
+        $hours = $tasks->sum('estimation');
 
-        return view('livewire.tasks.year', compact('done'));
+        return view('livewire.tasks.year', compact('done', 'hours'));
     }
 }
