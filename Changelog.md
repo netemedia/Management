@@ -24,11 +24,14 @@ We follow Semantic Versioning.
 # Table of contents
 
 - [Unreleased](#unreleased)
+- [v1.4.0](#v1.4.0)
 - [v1.3.0](#v1.3.0)
 - [v1.2.0](#v1.2.0)
 - [v1.1.0](#v1.1.0)
 
-# Unreleased
+# v1.4.0
+
+- `Added` Display week agenda for everyone.
 
 # v1.3.3
 
