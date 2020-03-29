@@ -1,24 +1,42 @@
 <div class="w-full">
 
-  <div class="w-full flex">
-    <input class="input py-1" type="date" value="{{ $date }}" wire:model="date">
+  <div class="w-full flex items-center">
+    <div class="cursor-pointer" wire:click="week(-1)">
+      <i aria-hidden="true" class="las la-angle-left"></i>
+    </div>
     <div class="w-4"></div>
-    <button class="button" wire:click="changeDate">
-      Valider
-    </button>
+    <input class="input py-1" type="date" value="{{ $date }}" wire:model="date" wire:change="update">
+    <div class="w-4"></div>
+    <div class="cursor-pointer" wire:click="week(1)">
+      <i aria-hidden="true" class="las la-angle-right"></i>
+    </div>
+    <div class="w-4"></div>
+    <select name="resource_id" id="resource_id"
+            class="input py-1"
+            wire:model="resource_id">
+      <option value="">-</option>
+      @foreach($selectResources as $i => $n)
+        <option value="{{ $i }}">{{ $n }}</option>
+      @endforeach
+    </select>
   </div>
 
   <div class="h-8"></div>
 
   <div class="flex w-full -mx-4 items-start">
     @foreach($days as $day => $date)
+      @php $tasksOfDay = $tasks->where('day', $date) @endphp
       <div class="w-1/5 mx-4 shadow bg-white rounded-sm">
         <div class="h-2"></div>
-        <header class="px-4">
-          {{ $day }} {{ Str::afterLast($date, '-') }}
+        <header class="px-4 flex justify-between items-center">
+          <div>
+            {{ $day }} {{ Str::afterLast($date, '-') }}
+          </div>
+          <div class="text-sm">
+            {{ $tasksOfDay->where('done')->sum('estimation') }}h / {{ $tasksOfDay->sum('estimation') }}h
+          </div>
         </header>
         <div class="h-2"></div>
-        @php $tasksOfDay = $tasks->where('day', $date) @endphp
         @foreach($tasksOfDay as $task)
           <div class="w-full h-px bg-gray-300"></div>
           <div class="px-4 relative justify-between text-sm @if($task->done) bg-gray-100 @endif">

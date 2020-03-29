@@ -36,8 +36,9 @@ class Tasks extends Component
     public function render()
     {
         $tasks = $this->initTasks();
+        $hours = $tasks->sum('estimation');
 
-        return view('livewire.resources.tasks', compact('tasks'));
+        return view('livewire.resources.tasks', compact('tasks', 'hours'));
     }
 
     public function edit(string $id)

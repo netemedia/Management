@@ -2,7 +2,7 @@
   <thead class="table-head">
   <tr>
     <td class="table-title lg:w-16">État</td>
-    <td class="table-title lg:w-16">~</td>
+    <td class="table-title lg:w-16">{{ $hours }}h</td>
     <th scope="col" class="table-title">Sujet</th>
     <td class="table-title lg:w-48">Resource</td>
     <td class="table-title lg:w-48">Date</td>

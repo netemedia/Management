@@ -29,7 +29,16 @@ We follow Semantic Versioning.
 - [v1.2.0](#v1.2.0)
 - [v1.1.0](#v1.1.0)
 
+# v1.4.1
+
+- `Added` Display hours on days on week schedule
+- `Added` Filter week schedule by resource
+- `Added` Date select improvements
+- `Added` Display total hours for resource tasks table
+
 # v1.4.0
+
+Weekly schedule ;)
 
 - `Added` Display week agenda for everyone.
 
