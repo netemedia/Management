@@ -55,6 +55,10 @@ class Agenda extends Component
     public function index() : Collection
     {
         if ( empty($this->resource_id) ) {
+            if ( ! empty (session()->get('resource')) ) {
+                $this->resource_id = session()->get('resource');
+            }
+
             return Task::where('day', '>=', $this->days['Lundi'])
                        ->where('day', '<=', $this->days['Vendredi'])
                        ->orderBy('day')
@@ -63,6 +67,8 @@ class Agenda extends Component
                        ->orderBy('project_id')
                        ->get();
         }
+
+        session()->put('resource', $this->resource_id);
 
         return Task::where('resource_id', $this->resource_id)
                    ->where('day', '>=', $this->days['Lundi'])
@@ -86,5 +92,11 @@ class Agenda extends Component
             'Jeudi'    => $current->addDay()->format('Y-m-d'),
             'Vendredi' => $current->addDay()->format('Y-m-d'),
         ];
+    }
+
+    public function refresh()
+    {
+        session()->put('resource', '');
+        $this->resource_id = null;
     }
 }

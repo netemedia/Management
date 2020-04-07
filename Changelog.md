@@ -29,6 +29,11 @@ We follow Semantic Versioning.
 - [v1.2.0](#v1.2.0)
 - [v1.1.0](#v1.1.0)
 
+#Unreleased
+- `Fixed` Pagination
+- `Added` Keep resource in session
+- `Adding` Autocomplete on select fields
+
 # v1.4.1
 
 - `Added` Display hours on days on week schedule

@@ -19,6 +19,10 @@
         <option value="{{ $i }}">{{ $n }}</option>
       @endforeach
     </select>
+    <div class="w-4"></div>
+    <div class="cursor-pointer" wire:click="refresh">
+      <i aria-hidden="true" class="las la-undo-alt"></i>
+    </div>
   </div>
 
   <div class="h-8"></div>

@@ -79,4 +79,8 @@ class Tasks extends Component
         $this->emit('TaskUpdated');
     }
 
+    public function paginationView()
+    {
+        return 'vendor.pagination.livewire';
+    }
 }
