@@ -29,7 +29,7 @@ We follow Semantic Versioning.
 - [v1.2.0](#v1.2.0)
 - [v1.1.0](#v1.1.0)
 
-#Unreleased
+# v1.4.2
 - `Fixed` Pagination
 - `Added` Keep resource in session
 - `Added` Autocomplete on select fields on Agenda
