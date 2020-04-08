@@ -1,0 +1,80 @@
+@startuml
+!include style.puml
+skinparam linetype ortho
+
+title Eloquent Relationship
+
+entity clients {
+	* string id (uuid)
+	* string name
+	datetime created_at
+	datetime updated_at
+	--custom attributes--
+	string link
+	bool is_complete
+	int completed_hours
+	int hours
+	?float percent_complete
+}
+entity projects {
+	* string id (uuid)
+	* **string client_id**
+	* string name
+	* bool innovation = false
+	datetime created_at
+	datetime updated_at
+	--custom attributes--
+	string link
+	?string lead
+	?string manager
+	int done_tasks_count
+	bool is_complete
+	int completed_hours
+	int hours
+	?float percent_complete
+}
+entity project_resource {
+	* **string project_id**
+	* **string resource_id**
+	* string position
+	datetime created_at
+	datetime updated_at
+}
+entity tasks {
+	* string id (uuid)
+	* **string project_id**
+	* **string resource_id**
+	bool done = false
+	* string title
+	string url
+	string estimation
+	date day
+	datetime created_at
+	datetime updated_at
+	--custom attributes--
+	string moment
+}
+entity resources {
+	* string id (uuid)
+	* string first_name
+	* string last_name
+	datetime created_at
+	datetime updated_at
+	--custom attributes--
+	string name
+	string link
+	int completed_tasks_count
+	int completed_tasks_total_hours
+	int tasks_total_hours
+	int completed_hours
+	int hours
+	?float percent_complete
+}
+
+clients --{ projects
+projects -left-{ tasks
+projects --{ project_resource
+resources --{ project_resource
+resources -right-{ tasks
+clients ..{ "__projects__  " tasks
+@enduml

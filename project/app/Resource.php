@@ -33,7 +33,7 @@ class Resource extends Model implements LinkInterface
         return $this->hasMany(Task::class);
     }
 
-    public function getNameAttribute()
+    public function getNameAttribute() : string
     {
         return "$this->first_name $this->last_name";
     }

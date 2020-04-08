@@ -37,7 +37,7 @@
   </tbody>
   <tfoot>
   <tr>
-    <td colspan="4">
+    <td colspan="6">
       {{ $tasks->links() }}
     </td>
   </tr>

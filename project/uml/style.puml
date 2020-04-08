@@ -1,0 +1,83 @@
+!ifndef FONTNAME
+!define FONTNAME "Operator Mono Book"
+!endif
+
+!ifndef FONTSIZE
+!define FONTSIZE 15
+!endif
+
+!define ONE #fc5c65
+!define TWO #eb3b5a
+!define THREE #fd9644
+!define FOUR #fa8231
+!define FIVE #fed330
+!define SIX #f7b731
+!define SEVEN #26de81
+!define EIGHT #20bf6b
+!define NINE #2bcbba
+!define TEN #0fb9b1
+
+!define ELEVEN #45aaf2
+!define TWELVE #2d98da
+!define THIRTEEN #4b7bec
+!define FOURTEEN #3867d6
+!define FIFTEEN #a55eea
+!define SIXTEEN #8854d0
+!define SEVENTEEN #d1d8e0
+!define EIGHTEEN #a5b1c2
+!define NINETEEN #778ca3
+!define TWENTY #4b6584
+
+skinparam shadowing false
+skinparam backgroundColor SEVENTEEN
+
+skinparam Stereotype {
+	 ABackgroundColor ONE
+	 ABorderColor ONE
+	 CBackgroundColor ELEVEN
+	 CBorderColor ELEVEN
+	 IBackgroundColor THREE
+	 IBorderColor THREE
+}
+
+skinparam circledCharacter {
+	radius 9
+	fontSize FONTSIZE
+	fontName FONTNAME
+	fontColor TWENTY
+}
+
+skinparam class {
+	borderColor NINETEEN
+	backgroundColor TWENTY
+	arrowColor TWENTY
+	fontColor SEVENTEEN
+	fontName FONTNAME
+	fontSize FONTSIZE
+	attributeFontColor SEVENTEEN
+	attributeFontNAME FONTNAME
+	attributeFontSize FONTSIZE
+	attributeIconSize FONTSIZE
+	methodFontColor SEVENTEEN
+	methodFontNAME FONTNAME
+	methodFontSize FONTSIZE
+	methodIconSize FONTSIZE
+}
+
+skinparam Note {
+	BorderColor NINETEEN
+	BackgroundColor TWENTY
+	FontColor SEVENTEEN
+	FontName FONTNAME
+}
+
+skinparam Package {
+	BorderColor NINETEEN
+	FontColor TWENTY
+	FontName FONTNAME
+	FontStyle bold italic
+	Style frame
+}
+
+hide empty methods
+hide empty attributes
