@@ -32,7 +32,7 @@ We follow Semantic Versioning.
 #Unreleased
 - `Fixed` Pagination
 - `Added` Keep resource in session
-- `Adding` Autocomplete on select fields
+- `Added` Autocomplete on select fields on Agenda
 
 # v1.4.1
 

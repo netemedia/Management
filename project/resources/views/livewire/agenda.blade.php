@@ -11,19 +11,29 @@
       <i aria-hidden="true" class="las la-angle-right"></i>
     </div>
     <div class="w-4"></div>
-    <select name="resource_id" id="resource_id"
-            class="input py-1"
-            wire:model="resource_id">
-      <option value="">-</option>
-      @foreach($selectResources as $i => $n)
-        <option value="{{ $i }}">{{ $n }}</option>
-      @endforeach
-    </select>
+    <div class="relative">
+      <input class="input py-1" placeholder="Ressources"
+             type="text" wire:focus="showResources" wire:blur="hideResources"
+             wire:model="searchResource"/>
+      @if($showResources)
+        <div class="flex flex-col bg-white absolute w-full shadow max-h-64 overflow-y-scroll overflow-x-hidden z-50">
+          @foreach($results as $resource)
+            <div class="p-1 hover:bg-gray-300 cursor-pointer" wire:key="{{$loop->index}}"
+                 wire:click="setResource('{{$resource->id}}')">
+              {{ $resource->name }}
+            </div>
+          @endforeach
+        </div>
+      @endif
+    </div>
     <div class="w-4"></div>
     <div class="cursor-pointer" wire:click="refresh">
       <i aria-hidden="true" class="las la-undo-alt"></i>
     </div>
   </div>
+
+  <div class="h-8"></div>
+
 
   <div class="h-8"></div>
 

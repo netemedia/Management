@@ -28,7 +28,20 @@ module.exports = {
             'indigos': [theme('colors.indigo.600'), theme('colors.indigo.400')],
             'purples': [theme('colors.purple.600'), theme('colors.purple.400')],
             'pinks'  : [theme('colors.pink.600'), theme('colors.pink.400')],
-        })
+        }),
+        minHeight: {
+            '0': '0',
+            'full': '100%',
+            'screen': '100vh',
+            '32': '8rem',
+            '64': '16rem',
+        },
+        maxHeight: {
+            'full': '100%',
+            'screen': '100vh',
+            '32': '8rem',
+            '64': '16rem',
+        }
     },
     variants: {
         gradients: ['responsive', 'hover'],
