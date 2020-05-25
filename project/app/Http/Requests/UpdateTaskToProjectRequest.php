@@ -11,8 +11,8 @@ class UpdateTaskToProjectRequest extends FormRequest
         return [
             'title'       => 'required|min:3',
             'url'         => 'nullable|url',
-            'estimation'  => 'nullable|numeric',
-            'day'         => 'nullable|date',
+            'estimation'  => 'required|numeric',
+            'day'         => 'required|date',
             'resource_id' => 'nullable|uuid|exists:resources,id',
         ];
     }
