@@ -29,6 +29,9 @@ We follow Semantic Versioning.
 - [v1.2.0](#v1.2.0)
 - [v1.1.0](#v1.1.0)
 
+# v1.4.3
+- `Fixed` Task Modification Error on database-required fields
+
 # v1.4.2
 - `Fixed` Pagination
 - `Added` Keep resource in session

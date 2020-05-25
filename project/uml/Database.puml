@@ -1,8 +1,7 @@
 @startuml
-!include style.puml
 skinparam linetype ortho
 
-title Eloquent Relationship
+title Eloquent Relationships
 
 entity clients {
 	* string id (uuid)

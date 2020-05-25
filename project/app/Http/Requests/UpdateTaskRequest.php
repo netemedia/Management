@@ -17,8 +17,8 @@ class UpdateTaskRequest extends FormRequest
         return [
             'title'       => 'required|min:3',
             'url'         => 'nullable|url',
-            'estimation'  => 'nullable|numeric',
-            'days'        => 'nullable|date',
+            'estimation'  => 'required|numeric',
+            'days'        => 'required|date',
             'project_id'  => 'required|uuid|exists:projects,id',
             'resource_id' => 'nullable|uuid|exists:resources,id',
         ];
