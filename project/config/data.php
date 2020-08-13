@@ -315,4 +315,22 @@ return [
             'estimation' => '4',
         ],
     ],
+    'users' => [
+        [
+            'name' => 'Christopher',
+            'email' => 'cbulhe@netemedia.fr',
+        ],
+        [
+            'name' => 'Lorenzo',
+            'email' => 'lmilesi@netemedia.fr'
+        ],
+        [
+            'name' => 'Julie',
+            'email' => 'jdelion@netemedia.fr'
+        ],
+        [
+            'name' => 'Matthieu',
+            'email' => 'mmoreau@netemedia.fr'
+        ],
+    ]
 ];

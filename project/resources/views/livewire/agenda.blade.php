@@ -40,7 +40,7 @@
   <div class="flex w-full -mx-4 items-start">
     @foreach($days as $day => $date)
       @php $tasksOfDay = $tasks->where('day', $date) @endphp
-      <div class="w-1/5 mx-4 shadow bg-white rounded-sm">
+      <div class="w-1/5 mx-4 shadow bg-white -sm">
         <div class="h-2"></div>
         <header class="px-4 flex justify-between items-center">
           <div>

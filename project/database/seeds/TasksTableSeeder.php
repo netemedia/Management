@@ -18,7 +18,7 @@ class TasksTableSeeder extends Seeder
         foreach ( $tasks as $task ) {
             // -- Create tasks through Project
             $project    = Project::where('name', $task['project'])->first();
-            $maker      = Arr::only($task, [ 'title', 'url', 'effort', 'estimation' ]);
+            $maker      = Arr::only($task, [ 'title', 'url', 'estimation' ]);
             $taskObject = $project->tasks()->create($maker);
 
             // -- Add Resource

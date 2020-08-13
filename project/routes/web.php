@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'DashboardController');
+Route::get('/', 'DashboardController')->name('dashboard');
 Route::post('/', 'DashboardController');
 Route::get('analytics', 'AnalyticsController')->name('analytics');
 Route::get('agenda', 'AgendaController')->name('agenda');
@@ -20,3 +20,6 @@ Route::resource('projects', 'ProjectController');
 Route::resource('resources', 'ResourceController');
 Route::resource('tasks', 'TaskController');
 Route::post('status/{task}', 'Task\StatusController')->name('status');
+
+Auth::routes(['register' => false]);
+

@@ -4,7 +4,7 @@
       <div class="fixed top-0 left-0 right-0 bottom-0 bg-modalbg cursor-pointer" wire:click="toggle">
 
       </div>
-      <div class="relative bg-white rounded-sm shadow-xl overflow-hidden">
+      <div class="relative bg-white -sm shadow-xl overflow-hidden">
         <header class="text-white text-center w-full border-b bg-blue-500 p-2">
           Modifer ticket {{ $old_title }}
         </header>
@@ -17,7 +17,7 @@
               Sujet* :
             </label>
             <input type="text" name="edit_title" id="edit_title"
-                   class="border border-solid border-gray-500 rounded-sm px-4"
+                   class="border border-solid border-gray-500 -sm px-4"
                    wire:model="title">
           </div>
 
@@ -28,7 +28,7 @@
               Url :
             </label>
             <input type="text" name="edit_url" id="edit_url"
-                   class="border border-solid border-gray-500 rounded-sm px-4"
+                   class="border border-solid border-gray-500 -sm px-4"
                    wire:model="url">
           </div>
 
@@ -39,7 +39,7 @@
               Estimation :
             </label>
             <input type="text" name="edit_estimation" id="edit_estimation"
-                   class="border border-solid border-gray-500 rounded-sm px-4"
+                   class="border border-solid border-gray-500 -sm px-4"
                    wire:model="estimation">
           </div>
 
@@ -50,7 +50,7 @@
               Jour :
             </label>
             <input type="date" name="edit_day" id="edit_day"
-                   class="border border-solid border-gray-500 rounded-sm px-4"
+                   class="border border-solid border-gray-500 -sm px-4"
                    wire:model="day">
           </div>
 
@@ -61,7 +61,7 @@
               Responsable :
             </label>
             <select name="edit_resource_id" id="edit_resource_id"
-                    class="border border-solid border-gray-500 rounded-sm px-4"
+                    class="border border-solid border-gray-500 -sm px-4"
                     wire:model="resource_id">
               <option value="">-</option>
               @foreach($selectResources as $i => $n)
@@ -73,11 +73,11 @@
           <div class="h-4"></div>
 
           <div class="flex justify-between -mx-2">
-          <span class="cursor-pointer text-white px-2 py-1 bg-teal-500 rounded-sm mx-2"
+          <span class="cursor-pointer text-white px-2 py-1 bg-teal-500 -sm mx-2"
                 wire:click="toggle">
             Annuler
           </span>
-            <span class="cursor-pointer text-white px-2 py-1 bg-blue-500 rounded-sm mx-2"
+            <span class="cursor-pointer text-white px-2 py-1 bg-blue-500 -sm mx-2"
                   wire:click="editTask('{{ $task_id }}')">
             Ok
           </span>

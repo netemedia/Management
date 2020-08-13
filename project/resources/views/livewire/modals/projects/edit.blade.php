@@ -4,7 +4,7 @@
       <div class="fixed top-0 left-0 right-0 bottom-0 bg-modalbg cursor-pointer" wire:click="toggle">
 
       </div>
-      <div class="relative bg-white rounded-sm shadow-xl overflow-hidden">
+      <div class="relative bg-white -sm shadow-xl overflow-hidden">
         <header class="text-white text-center w-full border-b bg-blue-500 p-2">
           Modifier <span class="text-bold">{{ $oldName }}</span>
         </header>
@@ -19,7 +19,7 @@
             <div class="flex items-center relative">
               <input id="edit_name" name="edit_name"
                      type="text"
-                     class="border border-solid border-gray-500 rounded-sm px-4 flex-1 h-8"
+                     class="border border-solid border-gray-500 -sm px-4 flex-1 h-8"
                      wire:keydown.enter="add"
                      wire:model="name">
               <span class="text-teal-500 text-gray-100 cursor-pointer absolute right-0 mr-2"
@@ -35,7 +35,7 @@
             </label>
             <div class="flex items-center relative">
               <select name="edit_lead" id="edit_lead"
-                      class="border border-solid border-gray-500 rounded-sm px-4 w-full"
+                      class="border border-solid border-gray-500 -sm px-4 w-full"
                       wire:model="lead">
                 <option value="">-</option>
                 @foreach($selectResources as $i => $n)
@@ -55,7 +55,7 @@
             </label>
             <div class="flex items-center relative">
               <select name="edit_manager" id="edit_manager"
-                      class="border border-solid border-gray-500 rounded-sm px-4 w-full"
+                      class="border border-solid border-gray-500 -sm px-4 w-full"
                       wire:model="manager">
                 <option value="">-</option>
                 @foreach($selectResources as $i => $n)
@@ -80,11 +80,11 @@
           </div>
           <div class="h-4"></div>
           <div class="flex justify-between -mx-2">
-          <span class="cursor-pointer text-white px-2 py-1 bg-teal-500 rounded-sm mx-2"
+          <span class="cursor-pointer text-white px-2 py-1 bg-teal-500 -sm mx-2"
                 wire:click="toggle">
             Annuler
           </span>
-            <span class="cursor-pointer text-white px-2 py-1 bg-blue-500 rounded-sm mx-2"
+            <span class="cursor-pointer text-white px-2 py-1 bg-blue-500 -sm mx-2"
                   wire:click="update('{{ $projectId }}')">
             Ok
           </span>

@@ -1,6 +1,6 @@
 <section class="flex -mx-4">
 
-  <div class="w-full bg-white rounded shadow mx-4">
+  <div class="w-full bg-white  shadow mx-4">
     <div class="h-4"></div>
 
     <div class="px-4 flex justify-between">

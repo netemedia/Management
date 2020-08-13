@@ -1,4 +1,4 @@
-<div class="w-1/3 bg-white rounded shadow mx-4 px-4">
+<div class="w-1/3 bg-white  shadow mx-4 px-4">
   <div class="h-4"></div>
 
   <div class="flex align-center">

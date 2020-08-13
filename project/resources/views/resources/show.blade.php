@@ -6,10 +6,10 @@
 
 @section('content')
   <section class="flex -mx-4 items-start flex-col lg:flex-row">
-    <div class="bg-white rounded shadow mx-4 lg:w-3/4">
+    <div class="bg-white  shadow mx-4 lg:w-3/4">
       @livewire('resources.tasks', $resource->id)
     </div>
-    <div class="bg-white rounded shadow my-4 mx-4 lg:my-0 ">
+    <div class="bg-white  shadow my-4 mx-4 lg:my-0 ">
       @livewire('filters.resources.tasks', $resource->id)
       @livewire('resources.add-task', $resource->id)
     </div>

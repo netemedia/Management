@@ -11,7 +11,7 @@
       <div class="flex items-center relative">
         <input id="search" name="search"
                type="text"
-               class="border border-solid border-gray-500 rounded-sm px-4 flex-1 h-8"
+               class="border border-solid border-gray-500 -sm px-4 flex-1 h-8"
                wire:keydown="search"
                wire:model="search">
         <span class="text-teal-500 text-gray-100 cursor-pointer absolute right-0 mr-2"
@@ -22,7 +22,7 @@
     </div>
     <div class="h-4"></div>
     <div class="flex justify-end">
-      <span class="px-2 bg-blue-500 text-gray-100 rounded-sm cursor-pointer"
+      <span class="px-2 bg-blue-500 text-gray-100 -sm cursor-pointer"
             wire:click="search">
         Trouver
       </span>
