@@ -92,14 +92,14 @@
     <div class="h-8"></div>
 
     <section class="flex justify-end">
-        <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-decoration-none" href="{{ route('reports.edit', $report) }}">
+        <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded no-underline" href="{{ route('reports.edit', $report) }}">
             <i class="las la-pen"></i> Modifier
         </a>
 
         <form method="post" action="{{ route('reports.destroy', $report) }}">
             @method('delete')
             @csrf
-            <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" type="submit" onclick="return confirm('Êtes-vous certain de vouloir supprimer ce rapport ?');"><i class="las la-trash-alt"></i> Supprimer</button>
+            <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 ml-4 rounded" type="submit" onclick="return confirm('Êtes-vous certain de vouloir supprimer ce rapport ?');"><i class="las la-trash-alt"></i> Supprimer</button>
         </form>
     </section>
 @endsection
