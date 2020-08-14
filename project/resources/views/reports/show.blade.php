@@ -29,7 +29,7 @@
             </div>
             <div class="h-4"></div>
             <div class="bg-white p-4">
-                {{ $report->done }}
+                {!! $report->done !!}
             </div>
         </div>
 
@@ -39,7 +39,7 @@
             </div>
             <div class="h-4"></div>
             <div class="bg-white p-4">
-                {{ $report->doing }}
+                {!! $report->doing !!}
             </div>
         </div>
 
@@ -49,7 +49,7 @@
             </div>
             <div class="h-4"></div>
             <div class="bg-white p-4">
-                {{ $report->todo }}
+                {!! $report->todo !!}
             </div>
         </div>
 
@@ -82,7 +82,7 @@
             </div>
             <div class="h-4"></div>
             <div class="bg-white p-4">
-                {{ $report->observations }}
+                {!! $report->observations !!}
             </div>
         </div>
 

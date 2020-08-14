@@ -9,7 +9,7 @@ services:
       - 3000:3000
       - 3001:3001
     volumes:
-      - ./project:/srv/app
+      - ./project:/srv/app:delegated
     environment:
       NODE_ENV: development
   db:

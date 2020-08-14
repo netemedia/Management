@@ -19,7 +19,7 @@ Route::resource('clients', 'ClientController');
 Route::resource('projects', 'ProjectController');
 Route::resource('resources', 'ResourceController');
 Route::resource('tasks', 'TaskController');
-Route::resource('reports', 'ReportController')->only(['show', 'destroy']);
+Route::resource('reports', 'ReportController')->only(['show', 'edit', 'update', 'destroy']);
 Route::get('projects/{project}/create/report', 'ReportController@create')
     ->name('reports.create');
 Route::post('projects/{project}/create/report', 'ReportController@store')

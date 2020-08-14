@@ -77,6 +77,12 @@
 
         <div class="h-8"></div>
 
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+
         <div>
             @yield('content')
         </div>

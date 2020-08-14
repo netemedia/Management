@@ -5,7 +5,7 @@
 @endsection
 
 @section('subtitle')
-    Nouveau Rapport
+    Rapport {{ $report->period }}
 @endsection
 
 @section('breadcrumb')
@@ -23,7 +23,7 @@
     </section>
     <div class="h-8"></div>
 
-    <form id="form-report" method="post" action="{{ route('reports.store', $project) }}">
+    <form id="form-report" method="post" action="{{ route('reports.update') }}">
 
         @csrf
 
@@ -41,6 +41,7 @@
                                 type="date"
                                 name="debut"
                                 required
+                                value="{{ $report->debut }}"
                         >
                     </div>
                     <div class="w-4"></div>
@@ -48,6 +49,7 @@
                         <label for="fin">Au</label>
                         <input
                                 class="input" id="fin" type="date" name="fin" required
+                                value="{{ $report->fin }}"
                         >
                     </div>
                 </div>
@@ -105,6 +107,7 @@
         let todoQuill = new Quill('#todo', {
             theme: 'snow'
         });
+        todoQuill.setText('{{ $report->todo }}');
 
         let doingQuill = new Quill('#doing', {
             theme: 'snow'

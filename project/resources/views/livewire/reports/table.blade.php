@@ -3,6 +3,9 @@
     <tr>
         <th class="table-title">Rapports</th>
         <td class="table-title">
+            Actions
+        </td>
+        <td class="table-title">
             <a class="go" href="{{ route('reports.create', $project_id) }}">
                 Ajouter
             </a>
@@ -15,6 +18,11 @@
             <td class="p-4">
                 <a class="go capitalize" href="{{ route('reports.show', $report) }}">
                     {{ $report->period }}
+                </a>
+            </td>
+            <td class="p-4">
+                <a class="go" href="{{ route('reports.edit', $report) }}">
+                    Modifier
                 </a>
             </td>
         </tr>
