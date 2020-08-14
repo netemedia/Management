@@ -19,6 +19,11 @@ Route::resource('clients', 'ClientController');
 Route::resource('projects', 'ProjectController');
 Route::resource('resources', 'ResourceController');
 Route::resource('tasks', 'TaskController');
+Route::resource('reports', 'ReportController')->only(['show', 'destroy']);
+Route::get('projects/{project}/create/report', 'ReportController@create')
+    ->name('reports.create');
+Route::post('projects/{project}/create/report', 'ReportController@store')
+    ->name('reports.store');
 Route::post('status/{task}', 'Task\StatusController')->name('status');
 
 Auth::routes(['register' => false]);

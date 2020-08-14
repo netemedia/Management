@@ -16,8 +16,7 @@ class Year extends Component
 
     public function mount()
     {
-        $year = Carbon::now()->year;
-        $this->title = "Projets terminés | $year";
+        $this->title = "Projets terminés";
     }
 
     public function render()

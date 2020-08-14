@@ -17,6 +17,10 @@ use Illuminate\Support\Arr;
 
 class ProjectController extends Controller
 {
+    public function __construct() {
+        $this->middleware('auth');
+    }
+
     public function index(Request $request, ProjectRepository $projectRepository)
     {
         $projects = $projectRepository->build($request)->paginate(25);

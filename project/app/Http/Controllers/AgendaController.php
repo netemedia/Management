@@ -7,12 +7,10 @@ use Illuminate\View\View;
 
 class AgendaController extends Controller
 {
-    /**
-     * @param \Illuminate\Http\Request $request
-     *
-     * @return \Illuminate\View\View
-     * @throws \Exception
-     */
+    public function __construct() {
+        $this->middleware('auth');
+    }
+
     public function __invoke(Request $request) : View
     {
         return view('agenda');

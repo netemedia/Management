@@ -43,6 +43,11 @@ class Project extends Model implements LinkInterface
         return $this->hasMany(Task::class);
     }
 
+    public function reports()
+    {
+        return $this->hasMany(Report::class);
+    }
+
     public function getLinkAttribute() : string
     {
         return "/projects/{$this->id}";
