@@ -39,7 +39,7 @@ class ReportController extends Controller
         return view('reports.show', compact('report', 'tasks'));
     }
 
-    public function edit(Report $report, ReportRequest $request)
+    public function edit(Report $report)
     {
         dd('pouet');
         return view('reports.edit', compact('report'));
