@@ -78,9 +78,11 @@
         <div class="h-8"></div>
 
         @if (session('success'))
-            <div class="alert alert-success">
+            <div class="p-4 bg-green-100 text-green-700">
                 {{ session('success') }}
             </div>
+
+            <div class="h-8"></div>
         @endif
 
         <div>

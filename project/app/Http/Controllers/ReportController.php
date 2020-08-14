@@ -41,7 +41,6 @@ class ReportController extends Controller
 
     public function edit(Report $report)
     {
-        dd('pouet');
         return view('reports.edit', compact('report'));
     }
 
@@ -49,15 +48,19 @@ class ReportController extends Controller
     {
         $validated = $request->validated();
 
-        $project->reports()->create($validated);
+        $report->update($validated);
 
-        session()->flash('success', 'Le rapport a été créé avec succès !');
+        session()->flash('success', 'Le rapport a été modifié avec succès !');
 
-        return redirect()->route('projects.show', $project);
+        return redirect()->route('projects.show', $report->project);
     }
 
     public function destroy(Report $report)
     {
         $report->delete();
+
+        session()->flash('success', 'Le rapport a été supprimé avec succès !');
+
+        return redirect()->back();
     }
 }

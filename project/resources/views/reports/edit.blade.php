@@ -16,15 +16,16 @@
     <section class="flex -mx-4 items-start flex-col lg:flex-row">
         <div>
             Projet :
-            <a class="go" href="{{ route('projects.show', $project) }}">
-                {{ $project->name }}
+            <a class="go" href="{{ route('projects.show', $report->project) }}">
+                {{ $report->project->name }}
             </a>
         </div>
     </section>
     <div class="h-8"></div>
 
-    <form id="form-report" method="post" action="{{ route('reports.update') }}">
+    <form id="form-report" method="post" action="{{ route('reports.update', $report) }}">
 
+        @method('patch')
         @csrf
 
         <section class="flex -mx-8 items-start flex-col lg:flex-row">
@@ -107,19 +108,22 @@
         let todoQuill = new Quill('#todo', {
             theme: 'snow'
         });
-        todoQuill.setText('{{ $report->todo }}');
+        todoQuill.root.innerHTML = '{!! $report->todo !!}';
 
         let doingQuill = new Quill('#doing', {
             theme: 'snow'
         });
+        doingQuill.root.innerHTML = '{!! $report->doing !!}';
 
         let doneQuill = new Quill('#done', {
             theme: 'snow'
         });
+        doneQuill.root.innerHTML = '{!! $report->done !!}';
 
         let observationsQuill = new Quill('#observations', {
             theme: 'snow'
         });
+        observationsQuill.root.innerHTML = '{!! $report->observations !!}';
 
         let form = document.getElementById('form-report');
 

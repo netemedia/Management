@@ -22,8 +22,13 @@
             </td>
             <td class="p-4">
                 <a class="go" href="{{ route('reports.edit', $report) }}">
-                    Modifier
+                    <i class="las la-pen"></i> Modifier
                 </a>
+                <form method="post" action="{{ route('reports.destroy', $report) }}">
+                    @method('delete')
+                    @csrf
+                    <button class="go" type="submit" onclick="return confirm('Êtes-vous certain de vouloir supprimer ce rapport ?');"><i class="las la-trash-alt"></i> Supprimer</button>
+                </form>
             </td>
         </tr>
     @endforeach
